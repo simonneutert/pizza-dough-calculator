@@ -1,40 +1,34 @@
-(ns pizza.sicilian)
+(ns pizza.sicilian
+  (:require [pizza.helper :refer [round-first-decimal]]
+            [cljs.pprint :refer [pprint]]))
 
-(defn yeasty [yeast-type]
+(defn yeast-by-type [yeast-type]
   (case yeast-type
-    :fresh 0.0045
-    :dry 0.0015))
+    :fresh 0.008118081
+    :dry 0.00332103321))
 
 (defn sicilian
-  [number grams-per-pizza yeast water-share]
+  [number grams-per-pizza yeast]
 
   (let [total-weight (* number grams-per-pizza)
-        salt-percentage 0.0119
-        salt-grams (js/parseFloat (.toFixed (* total-weight salt-percentage) 2))
-        yeast-grams (js/parseFloat (.toFixed (* total-weight (yeasty yeast)) 2))
-        oil-grams (js/parseFloat (.toFixed (* total-weight 0.0177) 2))
-        sugar-grams (js/parseFloat (.toFixed (* total-weight 0.0024) 2))
-        net-weight-water-flour (- total-weight salt-grams yeast-grams)
-        flour-grams (js/Math.round (/ net-weight-water-flour (/ (+ 100 water-share) 100)))
-        water-grams (js/Math.round (* flour-grams (/ water-share 100)))]
-    
-    {:total-weight total-weight
+        water-share 66
+        salt-percentage 0.01107
+        semolina-percentage 0.22
+        salt-grams (round-first-decimal (js/parseFloat (.toFixed (* total-weight salt-percentage) 2)))
+        yeast-grams (round-first-decimal (js/parseFloat (.toFixed (* total-weight (yeast-by-type yeast)) 2)))
+        oil-grams (round-first-decimal (js/parseFloat (.toFixed (* total-weight 0.02583) 2)))
+        sugar-grams (round-first-decimal (js/parseFloat (.toFixed (* total-weight 0.01107) 2)))
+        net-weight-water-flour (- total-weight salt-grams yeast-grams oil-grams sugar-grams)
+        flour-grams-with-semolina (js/Math.round (/ net-weight-water-flour (/ (+ 100 water-share) 100)))
+        semolina-grams (Math.round (* semolina-percentage flour-grams-with-semolina))
+        flour-grams (- flour-grams-with-semolina semolina-grams)
+        water-grams (js/Math.round (* flour-grams-with-semolina (/ water-share 100)))]
+
+    {:flour flour-grams
      :water water-grams
-     :flour flour-grams
+     :salt salt-grams
+     :sugar sugar-grams
      :yeast {yeast yeast-grams}
-     :salt salt-grams}))
-
-
-
-(comment 
-  
-  (= (sicilian 4 230 :fresh 63)
-     {:total-weight 920
-      :flour 542
-      :water 352
-      :salt 16.4
-      :yeast {:fresh 1.1}})
-  
-  
-  ;;
-  )
+     :oil oil-grams
+     :semolina semolina-grams
+     :total-weight total-weight}))
