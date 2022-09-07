@@ -1,3 +1,5 @@
-{:deps {org.clojure/clojurescript {:mvn/version "1.11.54"}}
- :aliases
- {:test {:extra-paths ["test"]}}}
+{:paths ["src" "test"]
+ :deps {org.clojure/clojurescript {:mvn/version "1.11.54"}}
+ :aliases {:test {:extra-paths ["test"]
+                  :main-opts ["--main"    "cljs.main"
+                              "--compile" "pizza.test_runner"]}}}

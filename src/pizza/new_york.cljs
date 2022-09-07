@@ -9,7 +9,6 @@
 
 (defn new-york
   [number grams-per-pizza yeast]
-
   (let [water-share 63
         total-weight (* number grams-per-pizza)
         salt-percentage 0.0118478
