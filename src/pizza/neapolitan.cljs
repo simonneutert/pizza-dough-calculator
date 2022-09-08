@@ -1,24 +1,32 @@
-(ns pizza.neapolitan)
+(ns pizza.neapolitan
+  (:require [pizza.helper :refer [total-weight
+                                  yeast-grams
+                                  salt-grams
+                                  net-weight-water-flour]]))
 
-(defn yeast-by-type [yeast-type]
-  (case yeast-type
-    :fresh 0.00119565217391304
-    :dry 0.00043478260869565))
+(def defaults
+  {:type "neapolitan"
+   :number 4
+   :grams-per-pizza 230
+   :yeast-type "fresh"
+   :salt-percentage 0.0178261
+   :water-share 65
+   :yeast {:fresh 0.00119565217391304
+           :dry 0.00043478260869565}})
 
 (defn neapolitan
   "Napolitanean style pizza"
-  [number grams-per-pizza yeast]
-  (let [water-share 65
-        total-weight (* number grams-per-pizza)
-        salt-percentage 0.0178261
-        salt-grams (js/parseFloat (.toFixed (* total-weight salt-percentage) 2))
-        yeast-grams (js/parseFloat (.toFixed (* total-weight (yeast-by-type yeast)) 2))
-        net-weight-water-flour (- total-weight salt-grams yeast-grams)
-        flour-grams (js/Math.round (/ net-weight-water-flour (/ (+ 100 water-share) 100)))
-        water-grams (js/Math.round (* flour-grams (/ water-share 100)))]
-
-    {:total-weight total-weight
-     :water water-grams
-     :flour flour-grams
-     :yeast {yeast yeast-grams}
-     :salt salt-grams}))
+  [pizza]
+  (let [new-pizza (merge defaults pizza)
+        total-weight (total-weight new-pizza)
+        salt-grams (salt-grams new-pizza)
+        yeast-grams (yeast-grams new-pizza)
+        net-weight-water-flour (net-weight-water-flour new-pizza)
+        flour-grams (js/Math.round (/ net-weight-water-flour (/ (+ 100 (:water-share new-pizza)) 100)))
+        water-grams (js/Math.round (* flour-grams (/ (:water-share new-pizza) 100)))]
+    (merge new-pizza
+           {:flour flour-grams
+            :water water-grams
+            :salt salt-grams
+            :yeast yeast-grams
+            :total-weight total-weight})))

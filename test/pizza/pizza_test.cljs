@@ -3,59 +3,121 @@
             [pizza.core :refer [bake]]))
 
 (deftest neapolitan-dry-test
-  (testing "napolitan with fresh yeast"
-    (is (= (bake :neapolitan 4 230 :dry)
-           {:total-weight 920
-            :flour 547
-            :water 356
-            :salt 16.4
-            :yeast {:dry 0.4}})))
-  (testing "napolitan with fresh yeast"
-    (is (= (bake :neapolitan 4 230 :fresh)
-           {:total-weight 920
-            :flour 547
-            :water 356
-            :salt 16.4
-            :yeast {:fresh 1.1}}))))
+  (testing "neapolitan with fresh yeast"
+    (let [pizza (bake "neapolitan" 4 230 "dry")]
+      (is (= (:type pizza) "neapolitan"))
+      (is (= (:salt pizza) 16.4))
+      (is (= (:grams-per-pizza pizza) 230))
+      (is (= (:number pizza) 4))
+      (is (= (:oil pizza) nil))
+      (is (= (:oil-percentage pizza) nil))
+      (is (= (:semolina pizza) nil))
+      (is (= (:yeast-type pizza) "dry"))
+      (is (= (:salt-percentage pizza) 0.0178261))
+      (is (= (:yeast pizza) 0.4))
+      (is (= (:total-weight pizza) 920))
+      (is (= (:flour pizza) 547))
+      (is (= (:sugar pizza) nil))
+      (is (= (:sugar-percentage pizza) nil))
+      (is (= (:water-share pizza) 65))
+      (is (= (:water pizza) 356))
+      (is (= (:semolina-percentage pizza) nil))))
+  (testing "neapolitan with fresh yeast"
+    (let [pizza (bake "neapolitan" 4 230 "fresh")]
+      (is (= (:type pizza) "neapolitan"))
+      (is (= (:salt pizza) 16.4))
+      (is (= (:grams-per-pizza pizza) 230))
+      (is (= (:number pizza) 4))
+      (is (= (:oil pizza) nil))
+      (is (= (:oil-percentage pizza) nil))
+      (is (= (:semolina pizza) nil))
+      (is (= (:yeast-type pizza) "fresh"))
+      (is (= (:salt-percentage pizza) 0.0178261))
+      (is (= (:yeast pizza) 1.1))
+      (is (= (:total-weight pizza) 920))
+      (is (= (:flour pizza) 547))
+      (is (= (:sugar pizza) nil))
+      (is (= (:sugar-percentage pizza) nil))
+      (is (= (:water-share pizza) 65))
+      (is (= (:water pizza) 356))
+      (is (= (:semolina-percentage pizza) nil)))))
 
-(deftest new-york-test
-  (testing "new york style with fresh yeast"
-    (is (= (bake :new-york 4 230 :fresh)
-           {:total-weight 920
-            :flour 544
-            :water 343
-            :salt 10.9
-            :oil 16.3
-            :sugar 2.2
-            :yeast {:fresh 4.1}})))
+(deftest new-york-dry-test
   (testing "new york style with dry yeast"
-    (is (= (bake :new-york 4 230 :dry)
-           {:total-weight 920
-            :flour 546
-            :water 344
-            :salt 10.9
-            :oil 16.3
-            :sugar 2.2
-            :yeast {:dry 1.4}}))))
+    (let [pizza (bake "new-york" 4 230 "dry")]
+      (is (= (:type pizza) "new-york"))
+      (is (= (:salt pizza) 10.9))
+      (is (= (:grams-per-pizza pizza) 230))
+      (is (= (:number pizza) 4))
+      (is (= (:oil pizza) 16.3))
+      (is (= (:oil-percentage pizza) 0.0177173913))
+      (is (= (:semolina pizza) nil))
+      (is (= (:yeast-type pizza) "dry"))
+      (is (= (:salt-percentage pizza) 0.0118478))
+      (is (= (:yeast pizza) 1.4))
+      (is (= (:total-weight pizza) 920))
+      (is (= (:flour pizza) 546))
+      (is (= (:sugar pizza) 2.2))
+      (is (= (:sugar-percentage pizza) 0.0023913))
+      (is (= (:water-share pizza) 63))
+      (is (= (:water pizza) 344))
+      (is (= (:semolina-percentage pizza) nil))))
+  (testing "new york style with fresh yeast"
+    (let [pizza (bake "new-york" 4 230 "fresh")]
+      (is (= (:type pizza) "new-york"))
+      (is (= (:salt pizza) 10.9))
+      (is (= (:grams-per-pizza pizza) 230))
+      (is (= (:number pizza) 4))
+      (is (= (:oil pizza) 16.3))
+      (is (= (:oil-percentage pizza) 0.0177173913))
+      (is (= (:semolina pizza) nil))
+      (is (= (:yeast-type pizza) "fresh"))
+      (is (= (:salt-percentage pizza) 0.0118478))
+      (is (= (:yeast pizza) 4.1))
+      (is (= (:total-weight pizza) 920))
+      (is (= (:flour pizza) 544))
+      (is (= (:sugar pizza) 2.2))
+      (is (= (:sugar-percentage pizza) 0.0023913))
+      (is (= (:water-share pizza) 63))
+      (is (= (:water pizza) 343))
+      (is (= (:semolina-percentage pizza) nil)))))
 
 (deftest sicilian-test
   (testing "sicilian dry test"
-    (is (= (bake :sicilian 1 271 :dry)
-           {:flour 121
-            :water 102
-            :salt 3
-            :sugar 3
-            :yeast {:dry 0.9}
-            :oil 7
-            :semolina 34
-            :total-weight 271})))
+    (let [pizza (bake "sicilian" 1 271 "dry")]
+      (is (= (:type pizza) "sicilian"))
+      (is (= (:salt pizza) 3))
+      (is (= (:grams-per-pizza pizza) 271))
+      (is (= (:number pizza) 1))
+      (is (= (:oil pizza) 7))
+      (is (= (:oil-percentage pizza) 0.02583))
+      (is (= (:semolina pizza) 34))
+      (is (= (:yeast-type pizza) "dry"))
+      (is (= (:salt-percentage pizza) 0.01107))
+      (is (= (:yeast pizza) 0.9))
+      (is (= (:total-weight pizza) 271))
+      (is (= (:flour pizza) 121))
+      (is (= (:sugar pizza) 3))
+      (is (= (:sugar-percentage pizza) 0.01107))
+      (is (= (:water-share pizza) 66))
+      (is (= (:water pizza) 102))
+      (is (= (:semolina-percentage pizza) 0.22))))
   (testing "sicilian fresh test"
-    (is (= (bake :sicilian 1 271 :fresh)
-           {:flour 120
-            :water 102
-            :salt 3
-            :sugar 3
-            :yeast {:fresh 2.2}
-            :oil 7
-            :semolina 34
-            :total-weight 271}))))
+    (let [pizza (bake "sicilian" 1 271 "fresh")]
+      (is (= (:type pizza) "sicilian"))
+      (is (= (:salt pizza) 3))
+      (is (= (:grams-per-pizza pizza) 271))
+      (is (= (:number pizza) 1))
+      (is (= (:oil pizza) 7))
+      (is (= (:oil-percentage pizza) 0.02583))
+      (is (= (:semolina pizza) 34))
+      (is (= (:yeast-type pizza) "fresh"))
+      (is (= (:salt-percentage pizza) 0.01107))
+      (is (= (:yeast pizza) 2.2))
+      (is (= (:total-weight pizza) 271))
+      (is (= (:flour pizza) 120))
+      (is (= (:sugar pizza) 3))
+      (is (= (:sugar-percentage pizza) 0.01107))
+      (is (= (:water-share pizza) 66))
+      (is (= (:water pizza) 102))
+      (is (= (:semolina-percentage pizza) 0.22)))))

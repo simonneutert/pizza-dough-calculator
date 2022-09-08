@@ -1,5 +1,13 @@
 (ns pizza.helper)
 
+(defn validate! [pizza]
+  (or (and (contains? pizza :number)
+           (contains? pizza :grams-per-pizza)
+           (contains? pizza :yeast-type)
+           (or (= (keyword (:yeast-type pizza)) :fresh)
+               (= (keyword (:yeast-type pizza)) :dry)))
+      (throw (js/Error. "Argument Error: needs number, grams-per-pizza and yeast-type (:fresh or :dry)"))))
+
 (defn- round-first-decimal
   [n]
   (/ (Math.round (* 10 n)) 10))
@@ -12,34 +20,35 @@
   (* (:number pizza) (:grams-per-pizza pizza)))
 
 (defn oil-grams
-  [total-weight pizza]
-  (round-first-decimal (fixed-float (* total-weight (:oil-percentage pizza)))))
+  [pizza]
+  (round-first-decimal (fixed-float (* (total-weight pizza) (:oil-percentage pizza)))))
 
 (defn salt-grams
-  [total-weight pizza]
+  [pizza]
   (->> pizza
        :salt-percentage
-       (* total-weight)
+       (* (total-weight pizza))
        fixed-float
        round-first-decimal))
 
 (defn yeast-grams
   [pizza]
-  (->> (get-in pizza [:yeast :yeast-type])
-       (* (total-weight pizza))
-       fixed-float
-       round-first-decimal))
+  (let [yeast-type-k (keyword (:yeast-type pizza))]
+    (->> (get-in pizza [:yeast yeast-type-k])
+         (* (total-weight pizza))
+         fixed-float
+         round-first-decimal)))
 
 (defn sugar-grams
-  [total-weight pizza]
-  (round-first-decimal (fixed-float (* total-weight (:sugar-percentage pizza)))))
+  [pizza]
+  (round-first-decimal (fixed-float (* (total-weight pizza) (:sugar-percentage pizza)))))
 
 (defn net-weight-water-flour
   [pizza]
-  (let [salt-grams (salt-grams total-weight pizza)
+  (let [salt-grams (salt-grams pizza)
         yeast-grams (yeast-grams pizza)
-        oil-grams (oil-grams total-weight pizza)
-        sugar-grams (sugar-grams total-weight pizza)]
+        oil-grams (oil-grams pizza)
+        sugar-grams (sugar-grams pizza)]
     (- (total-weight pizza) salt-grams yeast-grams oil-grams sugar-grams)))
 
 (defn flour-grams-with-semolina

@@ -1,29 +1,41 @@
 (ns pizza.new-york
-  (:require [pizza.helper :refer [round-first-decimal]]))
+  (:require [pizza.helper :refer [validate!
+                                  oil-grams
+                                  salt-grams
+                                  yeast-grams
+                                  sugar-grams
+                                  total-weight
+                                  net-weight-water-flour]]))
 
-(defn yeast-by-type [yeast-type]
-  (case yeast-type
-    :fresh 0.0045
-    :dry 0.0015))
+(def defaults
+  {:type "new-york"
+   :number 4
+   :grams-per-pizza 230
+   :water-share 63
+   :salt-percentage 0.0118478
+   :sugar-percentage 0.00239130
+   :oil-percentage 0.0177173913
+   :yeast {:fresh 0.0045
+           :dry 0.0015}})
 
 
 (defn new-york
-  [number grams-per-pizza yeast]
-  (let [water-share 63
-        total-weight (* number grams-per-pizza)
-        salt-percentage 0.0118478
-        salt-grams (round-first-decimal (js/parseFloat (.toFixed (* total-weight salt-percentage) 2)))
-        yeast-grams (round-first-decimal (js/parseFloat (.toFixed (* total-weight (yeast-by-type yeast)) 2)))
-        oil-grams (round-first-decimal (js/parseFloat (.toFixed (* total-weight 0.0177173913) 2)))
-        sugar-grams (round-first-decimal (js/parseFloat (.toFixed (* total-weight 0.00239130) 2)))
-        net-weight-water-flour (- total-weight salt-grams yeast-grams sugar-grams oil-grams)
-        flour-grams (js/Math.round (/ net-weight-water-flour (/ (+ 100 water-share) 100)))
-        water-grams (js/Math.round (* flour-grams (/ water-share 100)))]
-
-    {:total-weight total-weight
-     :water water-grams
-     :flour flour-grams
-     :yeast {yeast yeast-grams}
-     :salt salt-grams
-     :oil oil-grams
-     :sugar sugar-grams}))
+  [pizza]
+  (validate! pizza)
+  (let [new-pizza (merge defaults pizza)
+        total-weight (total-weight new-pizza)
+        salt-grams (salt-grams new-pizza)
+        yeast-grams (yeast-grams new-pizza)
+        oil-grams (oil-grams new-pizza)
+        sugar-grams (sugar-grams new-pizza)
+        net-weight-water-flour (net-weight-water-flour new-pizza)
+        flour-grams (js/Math.round (/ net-weight-water-flour (/ (+ 100 (:water-share new-pizza)) 100)))
+        water-grams (js/Math.round (* flour-grams (/ (:water-share new-pizza) 100)))]
+    (merge new-pizza
+           {:flour flour-grams
+            :water water-grams
+            :salt salt-grams
+            :sugar sugar-grams
+            :yeast yeast-grams
+            :oil oil-grams
+            :total-weight total-weight})))
