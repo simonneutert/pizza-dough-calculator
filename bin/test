@@ -1,0 +1,1 @@
+clj -M:test && node .cljs_node_repl/main.js
