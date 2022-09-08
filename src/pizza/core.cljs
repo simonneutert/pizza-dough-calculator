@@ -8,4 +8,6 @@
   (case (keyword pizza-type)
     :neapolitan (neapolitan number grams-per-pizza yeast-type)
     :new-york (new-york number grams-per-pizza yeast-type)
-    :sicilian (sicilian number grams-per-pizza yeast-type)))
+    :sicilian (sicilian {:number 4
+                         :grams-per-pizza grams-per-pizza
+                         :yeast-type yeast-type})))
