@@ -1,6 +1,40 @@
 # pizza-dough-calculator
 
-gnihihi
+This project is not much more than a cheap rip-off from [Städler Made](https://www.stadlermade.com) has undeniabely one of THE BEST recipes for pizza dough's on their website!
+
+Please, visit their page and take a look around before continuing here, they really deserve it!
+
+**DEVELOPERS** head over to the [README.DEVELOPMENT.md](https://github.com/simonneutert/pizza-dough-calculator/blob/main/README.DEVELOPMENT.md).
+
+## Let's make pizzas 🍕
+
+- [Styles](#styles)
+- [Neapolitan pizza](#neapolitan-pizza)
+  - [Ingredients ratio](#ingredients-ratio)
+    - [Instructions](#instructions)
+- [New York pizza (American)](#new-york-pizza--american-)
+  - [Ingredients ratio](#ingredients-ratio-1)
+    - [Instructions](#instructions-1)
+- [Sicilian pizza](#sicilian-pizza)
+  - [Ingredients ratio](#ingredients-ratio-2)
+    - [Instructions](#instructions-2)
+- [Size](#size)
+  - [Neapolitan & American pizza](#neapolitan---american-pizza)
+    - [S Pizza = Ø 16 CM/6 INCH](#s-pizza-----16-cm-6-inch)
+    - [M Pizza = Ø 28CM/ 11 INCH](#m-pizza-----28cm--11-inch)
+    - [L Pizza = Ø 34CM/ 13 INCH](#l-pizza-----34cm--13-inch)
+  - [Sicilian pizza](#sicilian-pizza-1)
+- [Flour](#flour)
+- [Water](#water)
+- [Salt](#salt)
+- [Yeast](#yeast)
+- [Kneading](#kneading)
+  - [Mixing and Kneading](#mixing-and-kneading)
+- [Cold Fermenting](#cold-fermenting)
+  - [Option 1: Room temperature (6-24 hours)](#option-1--room-temperature--6-24-hours-)
+  - [Option 2: Next-level (8-72 hours)](#option-2--next-level--8-72-hours-)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 ## Styles
 
@@ -181,8 +215,9 @@ There are two options on how to let your dough proof and rise:
 
 1. After you knead the dough, you cover it with cling film or a damp towel and let it rest for 2 hours.
 2. After 2 hours have passed, you can portion the dough into balls (See the calculator to find out how large you should make your balls of dough)
-3. Cover the dough balls with cling film or a damp towel again and let them rise at room 18-21℃ temperature for 4-22 hours.  
+3. Cover the dough balls with cling film or a damp towel again and let them rise at room 18-21℃ temperature for 4-22 hours.
 4. Then make the pizzas.
+
 #### Option 2: Next-level (8-72 hours)
 
 When you’d like to make next-level dough that’s tastier, easier to digest and has a bigger rise on the crust then try this:
