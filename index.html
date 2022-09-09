@@ -11,7 +11,29 @@
 <body>
   <script src="/out/main.js" type="text/javascript"></script>
   <div id="app"></div>
-  <p id="button"></p>
+  <p id="button">Sicilian Pizza!</p>
+  <form>
+    <label for="style">Style:</label>
+    <select name="style" id="style">
+      <option value="neapolitan" selected>Neapolitan</option>
+      <option value="new-york">New-York</option>
+      <option value="sicilian">Sicilian</option>
+      <option value="pan">Homemade Pan</option>
+    </select>
+
+    <label for="number">Pizzas:</label>
+    <input type="number" name="number" id="number">
+
+    <label for="grams">Grams per Pizza:</label>
+    <input type="number" name="grams" id="grams">
+
+    <label for="yeast">Yeast:</label>
+    <select name="yeast" id="yeast">
+      <option value="fresh" selected>fresh</option>
+      <option value="dry">dry</option>
+    </select>
+  </form>
+  <p id="pizza-recipe"></p>
 </body>
 
 </html>

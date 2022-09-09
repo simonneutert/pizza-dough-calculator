@@ -1,4 +1,4 @@
-(ns pizza.dom)
+(ns browser.dom)
 
 (defn elem-by-id [id]
   (.getElementById js/document id))
