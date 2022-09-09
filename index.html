@@ -54,13 +54,12 @@
           </div>
         </div>
 
-
         <div class="mb-3">
           <label for="grams" class="form-label">Grams per Pizza:</label>
           <input class="form-control" type="number" name="grams" id="grams" min="100" max="1000" step="10">
         </div>
 
-        <div>
+        <div class="mb-3">
           <label for="yeast" class="form-label">Type of Yeast:</label>
           <select class="form-control" name="yeast" id="yeast">
             <option value="fresh" selected>fresh</option>
@@ -68,8 +67,11 @@
           </select>
         </div>
       </form>
-      <p id="pizza-recipe"></p>
     </div>
+
+    <hr>
+
+    <p id="pizza-recipe" class="my-4"></p>
 
     <hr>
 
@@ -78,9 +80,7 @@
       <p>This project is not much more than a cheap rip-off from <a href="https://www.stadlermade.com">Städler Made</a>
         has undeniabely one of THE BEST recipes for pizza dough&#39;s on their website!</p>
       <p>Please, visit their page and take a look around before continuing here, they really deserve it!</p>
-      <p><strong>DEVELOPERS</strong> head over to the <a
-          href="https://github.com/simonneutert/pizza-dough-calculator/blob/main/README.DEVELOPMENT.md">README.DEVELOPMENT.md</a>.
-      </p>
+
       <h2 id="let-s-make-pizzas-">Let&#39;s make pizzas 🍕</h2>
       <ul>
         <li><a href="#styles">Styles</a></li>
