@@ -26,21 +26,6 @@
                :yeast-type yeast-type
                :number number})))
 
-(defn print-instructions
-  [pizza]
-  (print (clojure.string/capitalize (str (:type pizza))) "Pizza(s)" (:number pizza))
-  (print "Total weight" (:total-weight pizza) "(grams)")
-  (print "Flour" (:flour pizza) "(grams)")
-  (print "Water" (:water pizza) "(grams)")
-  (print "Salt" (:salt pizza) "(grams)")
-  (print "Yeast (" (:yeast-type pizza) ")" (:yeast pizza) "(grams)")
-  (if (:sugar pizza) (print "Sugar" (:sugar pizza) "(grams)") nil)
-  (if (:oil pizza) (print "Oil" (:oil pizza) "(grams)") nil)
-  (if (:semolina pizza) (print "Semolina" (:semolina pizza) "(grams)") nil)
-  pizza)
-
-(set! (.-innerHTML (dom/elem-by-id "pizza-recipe")) (recipe-template (bake "new-york" 2 230 "fresh")))
-
 (defn click-handle []
   (let [{:keys [number grams-per-pizza style yeast]} @db]
     (->> (recipe-template (bake style number grams-per-pizza yeast))
@@ -56,8 +41,8 @@
     (.addEventListener js/document "DOMContentLoaded" fn)))
 
 (defn- main []
-  (.addEventListener (dom/elem-by-id "button")
-                     "click" click-handle)
+  (set! (.-value (dom/elem-by-id "style")) (:style @db))
+  (set! (.-value (dom/elem-by-id "yeast")) (:yeast @db))
   (set! (.-value (dom/elem-by-id "number")) (:number @db))
   (set! (.-value (dom/elem-by-id "grams")) (:grams-per-pizza @db))
   (.addEventListener (dom/elem-by-id "style")
@@ -67,7 +52,8 @@
   (.addEventListener (dom/elem-by-id "grams")
                      "change" #(update-db! :grams-per-pizza (int (.-value (dom/elem-by-id "grams")))))
   (.addEventListener (dom/elem-by-id "yeast")
-                     "change" #(update-db! :yeast (.-value (first (.-selectedOptions (dom/elem-by-id "yeast")))))))
+                     "change" #(update-db! :yeast (.-value (first (.-selectedOptions (dom/elem-by-id "yeast"))))))
+  (click-handle))
 
 (add-watch db :trigger click-handle)
 (ready main)

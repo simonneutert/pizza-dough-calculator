@@ -17,9 +17,8 @@
      (if semolina [:p "Semolina: " semolina "g"] nil)
      [:p "Water: " water "g"]
      [:p "Salt: " salt "g"]
-     (if sugar [:p "Sugar: " sugar "g"] nil)
-     [:p "Sugar: " sugar "g"]
      [:p "Yeast (" yeast-type "): " yeast "g"]
+     (if sugar [:p "Sugar: " sugar "g"] nil)
      (if oil [:p "Oil: " oil "g"] nil)]))
 
 (hiccups/defhtml recipe-template [pizza]
