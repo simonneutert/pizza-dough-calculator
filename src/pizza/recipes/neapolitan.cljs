@@ -1,8 +1,9 @@
-(ns pizza.neapolitan
-  (:require [pizza.helper :refer [total-weight
+(ns pizza.recipes.neapolitan
+  (:require [pizza.helper :refer [salt-grams
                                   yeast-grams
-                                  salt-grams
-                                  net-weight-water-flour]]))
+                                  water-grams
+                                  total-weight
+                                  flour-grams-all-flours]]))
 
 (def defaults
   {:type "neapolitan"
@@ -21,12 +22,11 @@
         total-weight (total-weight new-pizza)
         salt-grams (salt-grams new-pizza)
         yeast-grams (yeast-grams new-pizza)
-        net-weight-water-flour (net-weight-water-flour new-pizza)
-        flour-grams (js/Math.round (/ net-weight-water-flour (/ (+ 100 (:water-share new-pizza)) 100)))
-        water-grams (js/Math.round (* flour-grams (/ (:water-share new-pizza) 100)))]
+        flour-grams (flour-grams-all-flours new-pizza)
+        water-grams (water-grams new-pizza flour-grams)]
     (merge new-pizza
-           {:flour flour-grams
+           {:salt salt-grams
+            :flour flour-grams
             :water water-grams
-            :salt salt-grams
             :yeast yeast-grams
             :total-weight total-weight})))

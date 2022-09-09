@@ -43,7 +43,7 @@
   [pizza]
   (round-first-decimal (fixed-float (* (total-weight pizza) (:sugar-percentage pizza)))))
 
-(defn net-weight-water-flour
+(defn- net-weight-water-flour
   [pizza]
   (let [salt-grams (salt-grams pizza)
         yeast-grams (yeast-grams pizza)
@@ -51,10 +51,15 @@
         sugar-grams (sugar-grams pizza)]
     (- (total-weight pizza) salt-grams yeast-grams oil-grams sugar-grams)))
 
-(defn flour-grams-with-semolina
-  [pizza net-weight-water-flour]
+(defn water-grams [pizza weight-reference]
+  (->> (/ (:water-share pizza) 100)
+       (* weight-reference)
+       js/Math.round))
+
+(defn flour-grams-all-flours
+  [pizza]
   (->> (/ (+ 100 (:water-share pizza)) 100)
-       (/ net-weight-water-flour)
+       (/ (net-weight-water-flour pizza))
        js/Math.round))
 
 (defn semolina-grams

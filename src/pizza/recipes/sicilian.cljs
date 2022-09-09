@@ -1,13 +1,13 @@
-(ns pizza.sicilian
+(ns pizza.recipes.sicilian
   (:require [pizza.helper :refer [validate!
                                   oil-grams
                                   salt-grams
                                   yeast-grams
                                   sugar-grams
+                                  water-grams
                                   total-weight
                                   semolina-grams
-                                  net-weight-water-flour
-                                  flour-grams-with-semolina]]))
+                                  flour-grams-all-flours]]))
 
 (def defaults
   {:type "sicilian"
@@ -31,17 +31,16 @@
         yeast-grams (yeast-grams new-pizza)
         oil-grams (oil-grams new-pizza)
         sugar-grams (sugar-grams new-pizza)
-        net-weight-water-flour (net-weight-water-flour new-pizza)
-        flour-grams-with-semolina (flour-grams-with-semolina new-pizza net-weight-water-flour)
+        flour-grams-with-semolina (flour-grams-all-flours new-pizza)
         semolina-grams (semolina-grams new-pizza flour-grams-with-semolina)
         flour-grams (- flour-grams-with-semolina semolina-grams)
-        water-grams (js/Math.round (* flour-grams-with-semolina (/ (:water-share new-pizza) 100)))]
+        water-grams (water-grams new-pizza flour-grams-with-semolina)]
     (merge new-pizza
-           {:flour flour-grams
-            :water water-grams
+           {:oil oil-grams
             :salt salt-grams
+            :flour flour-grams
+            :water water-grams
             :sugar sugar-grams
             :yeast yeast-grams
-            :oil oil-grams
             :semolina semolina-grams
             :total-weight total-weight})))

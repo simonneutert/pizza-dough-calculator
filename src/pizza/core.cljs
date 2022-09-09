@@ -1,12 +1,16 @@
 (ns pizza.core
-  (:require [pizza.neapolitan :refer [neapolitan]]
-            [pizza.new-york :refer [new-york]]
-            [pizza.sicilian :refer [sicilian]]
+  (:require [pizza.recipes.neapolitan :refer [neapolitan]]
+            [pizza.recipes.new-york :refer [new-york]]
+            [pizza.recipes.sicilian :refer [sicilian]]
+            [pizza.recipes.pan :refer [pan]]
             [clojure.string :as string]))
 
 (defn bake
   [pizza-type number grams-per-pizza yeast-type]
   (case (keyword pizza-type)
+    :pan (pan {:number number
+               :grams-per-pizza grams-per-pizza
+               :yeast-type yeast-type})
     :neapolitan (neapolitan {:number number
                              :grams-per-pizza grams-per-pizza
                              :yeast-type yeast-type})
@@ -24,9 +28,9 @@
   (print "Water" (:water pizza) "(grams)")
   (print "Salt" (:salt pizza) "(grams)")
   (print "Yeast (" (:yeast-type pizza) ")" (:yeast pizza) "(grams)")
-  (if (:sugar pizza) (print "Sugar" (:sugar pizza) "(grams)"))
-  (if (:oil pizza) (print "Oil" (:oil pizza) "(grams)"))
-  (if (:semolina pizza) (print "Semolina" (:semolina pizza) "(grams)"))
+  (if (:sugar pizza) (print "Sugar" (:sugar pizza) "(grams)") nil)
+  (if (:oil pizza) (print "Oil" (:oil pizza) "(grams)") nil)
+  (if (:semolina pizza) (print "Semolina" (:semolina pizza) "(grams)") nil)
   pizza)
 
 (defn stringify [pizza]
@@ -38,14 +42,12 @@
        "\n"
        "Ingredients:\n"
        "Flour " (:flour pizza) "g\n"
-       (if (:semolina pizza) (str "Semolina" (:semolina pizza) "g\n"))
+       (if (:semolina pizza) (str "Semolina" (:semolina pizza) "g\n") nil)
        "Water " (:water pizza) "g\n"
        "Salt " (:salt pizza) "g\n"
-       (if (:sugar pizza) (str "Sugar" (:sugar pizza) "g\n"))
+       (if (:sugar pizza) (str "Sugar" (:sugar pizza) "g\n") nil)
        "Yeast (" (:yeast-type pizza) ")" " " (:yeast pizza) "g\n"
-       (if (:oil pizza) (str "Oil" (:oil pizza) "g\n"))
-       ;;
-       ))
+       (if (:oil pizza) (str "Oil" (:oil pizza) "g\n") nil)))
 
 
 (comment
