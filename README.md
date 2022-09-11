@@ -51,7 +51,7 @@ The best Neapolitan pizza should have a big, beautiful crust that's slightly cri
 #### Instructions
 
 Proofing at room temperature (min 6 – max 24 hours) or cold fermenting (min 8 – max 72 hours)  
-Oven temperature: 400 – 550°C / 750 – 1020℉.  
+Oven temperature: 400 – 550°C / 750 – 1020°F.  
 Baking time: 1 – 4 mins.
 
 ## New York pizza (American)
@@ -76,7 +76,7 @@ A Neapolitan pizza would dry out during this period. The New Yorker doesn't beca
 #### Instructions
 
 Proofing at room temperature (min 6 – max 24 hours) or cold fermenting (min 8 – max 72 hours)  
-Oven temperature: 200 – 300°C / 400 – 580℉.  
+Oven temperature: 200 – 300°C / 400 – 580°F.  
 Baking time: 8 – 15 min s.
 
 ## Sicilian pizza
@@ -98,7 +98,7 @@ These pizzas have a thicker, softer, and more bread-like texture than the Neapol
 #### Instructions
 
 Proofing at room temperature (min 6 – max 24 hours) or cold fermenting (min 8 – max 72 hours)  
-Oven temperature: 250 – 280°C /480 – 540 ℉.  
+Oven temperature: 250 – 280°C /480 – 540 °F.  
 Baking time: 15 – 20 mins.
 
 ## Size
@@ -186,7 +186,7 @@ Simply press the calculate button and BOOM! you'll have a custom-made recipe.
 
 1. First, take 2 bowls and add the amount of flour specified by the calculator to one of them.
 
-2. Fill the second bowl with the amount of water the calculator tells you to use. Make sure that the water is cold enough(anywhere between 12℃ / 53℉ and 19℃ / 66℉ will do).
+2. Fill the second bowl with the amount of water the calculator tells you to use. Make sure that the water is cold enough(anywhere between 12°C / 53°F and 19°C / 66°F will do).
 
 3. Add your salt (preferably kosher salt or sea salt), stir it into the water until it's completely dissolved.
 
@@ -212,14 +212,14 @@ There are two options on how to let your dough proof and rise:
 
 1. After you knead the dough, you cover it with cling film or a damp towel and let it rest for 2 hours.
 2. After 2 hours have passed, you can portion the dough into balls (See the calculator to find out how large you should make your balls of dough)
-3. Cover the dough balls with cling film or a damp towel again and let them rise at room 18-21℃ temperature for 4-22 hours.
+3. Cover the dough balls with cling film or a damp towel again and let them rise at room 18-21°C temperature for 4-22 hours.
 4. Then make the pizzas.
 
 #### Option 2: Next-level (8-72 hours)
 
 When you'd like to make next-level dough that's tastier, easier to digest and has a bigger rise on the crust then try this:
 
-1. After you knead your dough you can cold-proof it, meaning that you put it straight into the fridge (4 to 7℃) covered with cling film or a damp towel. Or even better, put it in an airtight container.
+1. After you knead your dough you can cold-proof it, meaning that you put it straight into the fridge (4 to 7°C) covered with cling film or a damp towel. Or even better, put it in an airtight container.
 
 2. Then leave it in the fridge for 8 to 72 hours.
    When you take it out of the fridge, you place it on a lightly flowered tabletop so you can portion the dough into balls (Check the calculator to find out how large you should make your balls of dough).

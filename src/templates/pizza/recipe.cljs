@@ -9,7 +9,6 @@
               (:grams-per-pizza pizza) "g each and "))
        (:total-weight pizza) "g total"))
 
-
 (hiccups/defhtml recipe-ingredients-template [pizza]
   (let [{:keys [flour water salt yeast semolina sugar yeast-type oil]} pizza]
     [:div

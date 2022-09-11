@@ -28,7 +28,8 @@
 
 (defn click-handle []
   (let [{:keys [number grams-per-pizza style yeast]} @db]
-    (->> (recipe-template (bake style number grams-per-pizza yeast))
+    (->> (bake style number grams-per-pizza yeast)
+         (recipe-template)
          (dom/innerhtml (dom/elem-by-id "pizza-recipe")))))
 
 (defn update-db! [k v]
