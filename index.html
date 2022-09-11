@@ -55,15 +55,15 @@
 
             <div class="mb-3">
               <label for="number" class="form-label">Pizzas:</label>
-              <div class="input-group">
-                <input class="form-control" type="number" name="number" id="number" min="0" max="20">
-              </div>
+              <input class="form-control" type="number" name="number" id="number" min="0" max="20">
             </div>
 
             <div class="mb-3">
               <label for="grams" class="form-label">Grams per Pizza:</label>
-              <input class="form-control" type="number" name="grams" id="grams" min="100" max="1000" step="10">
-              <span class="input-group-text">g</span>
+              <div class="input-group">
+                <input class="form-control" type="number" name="grams" id="grams" min="100" max="1000" step="10">
+                <span class="input-group-text">g</span>
+              </div>
             </div>
 
             <div class="mb-3">
