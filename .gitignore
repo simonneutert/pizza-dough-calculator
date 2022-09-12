@@ -75,7 +75,7 @@ report.*
 # clojure-lsp
 .lsp
 output.calva-repl
-.clj-kondo
+.clj-kondo/.cache
 /clojure-lsp*
 backup/clojure-lsp
 
