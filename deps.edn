@@ -1,0 +1,16 @@
+{:paths ["src"]
+ :deps {org.clojure/clojurescript {:mvn/version "1.11.54"}
+        hiccups/hiccups {:mvn/version "0.3.0"}}
+
+ :aliases {:dev {:extra-deps {nrepl/nrepl {:mvn/version,"1.0.0"}
+                              cider/cider-nrepl {:mvn/version,"0.28.5"}
+                              cider/piggieback {:mvn/version,"0.5.3"}}
+                 :main-opts ["-m" "nrepl.cmdline"
+                             "--middleware" "[cider.nrepl/cider-middleware cider.piggieback/wrap-cljs-repl]"
+                             "pizza.core"]}
+           :test-runner {:extra-paths ["test"]
+                         :main-opts ["--main"            "cljs.main"
+                                     "--target"          "node"
+                                     "--compile"         "pizza.test_runner"
+                                     "--optimizations"   "none"
+                                     "--output-to"       "main-test.js"]}}}

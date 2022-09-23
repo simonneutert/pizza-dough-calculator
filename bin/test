@@ -1,0 +1,5 @@
+which clj > /dev/null
+
+which node > /dev/null
+
+clj -M:test-runner && node .cljs_node_repl/main.js

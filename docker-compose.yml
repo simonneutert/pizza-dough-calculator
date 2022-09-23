@@ -1,0 +1,27 @@
+version: '3.3'
+
+services:
+  server:
+    restart: unless-stopped
+    networks:
+      - web
+      - default
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=web"
+      - "traefik.http.routers.pizza.entrypoints=web"
+      - "traefik.http.routers.pizza.rule=Host(`pizza.simon-neutert.de`)"
+      - "traefik.http.routers.pizza.middlewares=https_redirect"
+      - "traefik.http.middlewares.https_redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.pizza_https.entrypoints=websecure"
+      - "traefik.http.routers.pizza_https.tls.certresolver=myhttpchallenge"
+      - "traefik.http.routers.pizza_https.rule=Host(`pizza.simon-neutert.de`)"
+      - "traefik.http.services.pizza.loadbalancer.server.port=80"
+
+networks:
+  web:
+    external: true
+
