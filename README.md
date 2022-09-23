@@ -2,7 +2,10 @@
 
 This project is not much more than a cheap rip-off from [Städler Made](https://www.stadlermade.com) has undeniabely one of THE BEST recipes for pizza dough's on their website!
 
-Please, visit their page and take a look around before continuing here, they really deserve it!
+Please, visit their page and take a look around before continuing here, they really deserve it!  
+All the following text/recipe/howto content is a copy taken from: https://www.stadlermade.com/pizza-calculator/ (2022-09-23)
+
+**It's the guys from Städler who deserve all the credits!**
 
 > Imitation is the sincerest form of flattery that mediocrity can pay to greatness.  
 > \- Oscar Wilde.
