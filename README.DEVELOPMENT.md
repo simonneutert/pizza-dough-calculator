@@ -11,3 +11,21 @@ This is how I do it with Node 16.17.0 and Clojure installed in VS Code:
 3. ☕️
 4. visit [localhost:8080](localhost:8080)
 5. develop with the REPL
+
+## Autoformat Code
+
+#### check first
+
+```bash
+$ clojure -Sdeps '{:deps {cljfmt {:mvn/version "0.9.0"}}}' \
+  -M -m cljfmt.main check
+```
+
+#### fix code
+
+```bash
+$ clojure -Sdeps '{:deps {cljfmt {:mvn/version "0.9.0"}}}' \
+  -M -m cljfmt.main fix
+```
+
+there is a script in `bin/` 🙃
