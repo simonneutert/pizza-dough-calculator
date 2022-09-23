@@ -7,6 +7,7 @@
 
 (def defaults
   {:type "neapolitan"
+   :name "Neapolitan"
    :number 4
    :grams-per-pizza 230
    :yeast-type "fresh"

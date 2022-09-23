@@ -10,8 +10,10 @@
 
 (def defaults
   {:type "new-york"
+   :name "New York"
    :number 4
    :grams-per-pizza 230
+   :yeast-type "fresh"
    :water-share 63
    :salt-percentage 0.0118478
    :sugar-percentage 0.00239130

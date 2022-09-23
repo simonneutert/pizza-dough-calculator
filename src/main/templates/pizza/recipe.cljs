@@ -23,6 +23,6 @@
 
 (defhtml recipe-template [pizza]
   [:div
-   [:h2 (str (:number pizza) " " (s/capitalize (str (:type pizza))) " Style Pizza")]
+   [:h2 (str (:number pizza) " " (str (:name pizza)) " Style Pizza")]
    [:h4 (pizza-details pizza)]
    (recipe-ingredients-template pizza)])

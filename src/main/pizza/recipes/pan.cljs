@@ -10,8 +10,10 @@
 
 (def defaults
   {:type "pan"
+   :name "Pan"
    :number 3
    :grams-per-pizza 230
+   :yeast-type "fresh"
    :water-share 65
    :salt-percentage 0.011682893
    :sugar-percentage 0.011682893

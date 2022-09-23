@@ -38,23 +38,45 @@
     (fn)
     (.addEventListener js/document "DOMContentLoaded" fn)))
 
-(defn- main []
+(defn dom-element-int-value-by-id
+  [dom-id]
+  (int (.-value (dom/elem-by-id dom-id))))
+
+(defn dom-element-value-from-select-by-id
+  [dom-id]
+  (.-value (first (.-selectedOptions (dom/elem-by-id dom-id)))))
+
+(defn watch-elem-by-id-update-db!
+  [event dom-id db-key callback]
+  (.addEventListener (dom/elem-by-id dom-id)
+                     event #(update-db! db-key (callback dom-id))))
+
+(defn watch-select-elem-by-id-update-db!
+  [event dom-id  db-key callback]
+  (.addEventListener (dom/elem-by-id dom-id)
+                     event #(update-db! db-key (callback dom-id))))
+
+(defn- set-initial-state! []
   (set! (.-value (dom/elem-by-id "style")) (:style @db))
   (set! (.-value (dom/elem-by-id "yeast")) (:yeast @db))
   (set! (.-value (dom/elem-by-id "number")) (:number @db))
-  (set! (.-value (dom/elem-by-id "grams")) (:grams-per-pizza @db))
-  (.addEventListener (dom/elem-by-id "style")
-                     "change" #(update-db! :style (.-value (first (.-selectedOptions (dom/elem-by-id "style"))))))
-  (.addEventListener (dom/elem-by-id "number")
-                     "keyup" #(update-db! :number (int (.-value (dom/elem-by-id "number")))))
-  (.addEventListener (dom/elem-by-id "grams")
-                     "keyup" #(update-db! :grams-per-pizza (int (.-value (dom/elem-by-id "grams")))))
-  (.addEventListener (dom/elem-by-id "number")
-                     "blur" #(update-db! :number (int (.-value (dom/elem-by-id "number")))))
-  (.addEventListener (dom/elem-by-id "grams")
-                     "blur" #(update-db! :grams-per-pizza (int (.-value (dom/elem-by-id "grams")))))
-  (.addEventListener (dom/elem-by-id "yeast")
-                     "change" #(update-db! :yeast (.-value (first (.-selectedOptions (dom/elem-by-id "yeast"))))))
+  (set! (.-value (dom/elem-by-id "grams")) (:grams-per-pizza @db)))
+
+(defn- add-watchers! []
+  (watch-select-elem-by-id-update-db! "change" "style" :style dom-element-value-from-select-by-id)
+  (watch-select-elem-by-id-update-db! "change" "yeast" :yeast dom-element-value-from-select-by-id)
+
+  (watch-elem-by-id-update-db! "change" "number" :number dom-element-int-value-by-id)
+  (watch-elem-by-id-update-db! "blur" "number" :number dom-element-int-value-by-id)
+  (watch-elem-by-id-update-db! "keyup" "number" :number dom-element-int-value-by-id)
+
+  (watch-elem-by-id-update-db! "change" "grams" :grams-per-pizza dom-element-int-value-by-id)
+  (watch-elem-by-id-update-db! "blur" "grams" :grams-per-pizza dom-element-int-value-by-id)
+  (watch-elem-by-id-update-db! "keyup" "grams" :grams-per-pizza dom-element-int-value-by-id))
+
+(defn- main []
+  (set-initial-state!)
+  (add-watchers!)
   (click-handle))
 
 (defn init []

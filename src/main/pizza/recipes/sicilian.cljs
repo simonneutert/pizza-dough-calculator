@@ -11,6 +11,7 @@
 
 (def defaults
   {:type "sicilian"
+   :name "Sicilian"
    :number 1
    :grams-per-pizza 271
    :yeast-type "fresh"

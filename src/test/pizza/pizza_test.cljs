@@ -1,8 +1,20 @@
 (ns pizza.pizza-test
   (:require [cljs.test :refer-macros [deftest is testing run-tests]]
-            [pizza.core :refer [bake]]))
+            [clojure.set :refer [superset?]]
+            [pizza.core :refer [bake]]
+            [pizza.recipes.neapolitan :as neapolitan]
+            [pizza.recipes.sicilian :as sicilian]
+            [pizza.recipes.pan :as pan]
+            [pizza.recipes.new-york :as new-york]
+            [pizza.schema.pizza :refer [pizza-keys]]))
 
 (deftest neapolitan-dry-test
+  (testing "neapolitan has minimal keys"
+    (is (superset? (set (keys neapolitan/defaults)) pizza-keys))
+    (is (superset? (set (keys sicilian/defaults)) pizza-keys))
+    (is (superset? (set (keys pan/defaults)) pizza-keys))
+    (is (superset? (set (keys new-york/defaults)) pizza-keys)))
+
   (testing "neapolitan with fresh yeast"
     (let [pizza (bake "neapolitan" 4 230 "dry")]
       (is (= (:type pizza) "neapolitan"))
