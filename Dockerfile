@@ -12,7 +12,8 @@ RUN npm i -g shadow-cljs
 WORKDIR /app
 COPY shadow-cljs.edn /app/
 COPY src /app/src
-COPY public /app/public
+COPY public/index.html /app/public/index.html
+COPY public/js/main.js /app/public/js/main.js
 RUN npx shadow-cljs release frontend
 
 FROM nginx:1-alpine
