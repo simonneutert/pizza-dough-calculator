@@ -21,7 +21,6 @@
    :yeast {:fresh 0.0045
            :dry 0.0015}})
 
-
 (defn new-york
   [pizza]
   (validate! pizza)
