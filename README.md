@@ -1,5 +1,12 @@
 # pizza-dough-calculator
 
+> Imitation is the sincerest form of flattery that mediocrity can pay to greatness.  
+> \- Oscar Wilde.
+
+This simple Shadow-Cljs project is an [hommage to Städler Made](https://www.stadlermade.com).
+
+## Important
+
 This project is not much more than a cheap rip-off from [Städler Made](https://www.stadlermade.com) has undeniabely one of THE BEST recipes for pizza dough's on their website!
 
 Please, visit their page and take a look around before continuing here, they really deserve it!  
@@ -7,10 +14,9 @@ All the following text/recipe/howto content is a copy taken from: https://www.st
 
 **It's the guys from Städler who deserve all the credits!**
 
-> Imitation is the sincerest form of flattery that mediocrity can pay to greatness.  
-> \- Oscar Wilde.
+### Important for DEVELOPERS
 
-**DEVELOPERS** head over to the [README.DEVELOPMENT.md](https://github.com/simonneutert/pizza-dough-calculator/blob/main/README.DEVELOPMENT.md).
+head over to the [README.DEVELOPMENT.md](https://github.com/simonneutert/pizza-dough-calculator/blob/main/README.DEVELOPMENT.md).
 
 ## Let's make pizzas 🍕
 
