@@ -4,6 +4,9 @@ This project is not much more than a cheap rip-off from [Städler Made](https://
 
 Please, visit their page and take a look around before continuing here, they really deserve it!
 
+> Imitation is the sincerest form of flattery that mediocrity can pay to greatness.  
+> \- Oscar Wilde.
+
 **DEVELOPERS** head over to the [README.DEVELOPMENT.md](https://github.com/simonneutert/pizza-dough-calculator/blob/main/README.DEVELOPMENT.md).
 
 ## Let's make pizzas 🍕
