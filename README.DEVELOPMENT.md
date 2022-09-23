@@ -29,3 +29,13 @@ $ clojure -Sdeps '{:deps {cljfmt {:mvn/version "0.9.0"}}}' \
 ```
 
 there is a script in `bin/` 🙃
+
+## Contributions
+
+PRs are welcome!
+
+Please note, I am still very new in the Clojure-verse, so there might be something very very weird to look at.
+
+At the time being there is no automation, so please, chip in your knowledge here!
+
+**And/Or** make sure you format your code properly and all the tests pass 🚦
