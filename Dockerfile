@@ -15,7 +15,6 @@ COPY src /app/src
 COPY public/index.html /app/public/index.html
 
 RUN npx shadow-cljs release frontend
-COPY /app/public/js/main.js /app/public/js/main.js
 
 FROM nginx:1-alpine
 
