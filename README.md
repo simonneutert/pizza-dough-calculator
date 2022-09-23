@@ -156,7 +156,7 @@ If you can't find tipo 00 flour, you can use regular bread flour. You should nev
 
 ## Water
 
-The pizza dough calculator assumes that you're using tipo 00 flour. If this is the case, you won't need to make any changes to the water percentage indicated.
+The pizza dough calculator assumes that you're using "tipo 00" flour. If this is the case, you won't need to make any changes to the water percentage indicated.
 
 In case you're using regular bread flour, it would be wise to set the parameter between 50% and 55%, since regular bread flour can't absorb large quantities of water. If you don't use less water with bread flour, your dough will get wet and soupy.
 
