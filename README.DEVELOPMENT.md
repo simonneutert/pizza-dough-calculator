@@ -4,7 +4,7 @@ this is a very basic [shadow-cljs](https://github.com/thheller/shadow-cljs) proj
 
 ## VS Code + Calva
 
-This is how I do it with Node 16.17.0 and Clojure installed in VS Code:
+This is how I do it with *Node 16.17.0* and Clojure installed in VS Code:
 
 1. from the command palette (Shift+CMD+P) `Start a REPL and Connect (aka Jack-In)`
 2. check ":frontend" + ":test" when prompted
