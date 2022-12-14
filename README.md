@@ -16,7 +16,7 @@ All the following text/recipe/howto content is a copy taken from: https://www.st
 
 [![Städler Made - How to make New York Pizza](https://img.youtube.com/vi/OHb0he4pqns/0.jpg)](https://www.youtube.com/watch?v=OHb0he4pqns)
 
-![](https://www.youtube.com/watch?v=OHb0he4pqns)
+☝️ Check out this funny AND informative video on how to make the best Pizza at home!
 
 ### Important for DEVELOPERS
 
