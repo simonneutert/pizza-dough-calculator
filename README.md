@@ -14,6 +14,10 @@ All the following text/recipe/howto content is a copy taken from: https://www.st
 
 **It's the guys from Städler who deserve all the credits!**
 
+[![Städler Made - How to make New York Pizza](https://img.youtube.com/vi/OHb0he4pqns/0.jpg)](https://www.youtube.com/watch?v=OHb0he4pqns)
+
+![](https://www.youtube.com/watch?v=OHb0he4pqns)
+
 ### Important for DEVELOPERS
 
 head over to the [README.DEVELOPMENT.md](https://github.com/simonneutert/pizza-dough-calculator/blob/main/README.DEVELOPMENT.md).
