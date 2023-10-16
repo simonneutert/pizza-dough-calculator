@@ -1,4 +1,4 @@
-FROM node:18-bookworm AS build
+FROM node:20-bookworm AS build
 
 RUN apt-get update && apt-get -q -y install \
     openjdk-17-jre-headless \
