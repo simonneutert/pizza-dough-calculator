@@ -1,4 +1,4 @@
-FROM node:20-bookworm AS build
+FROM FROM oven/bun:latest AS build
 
 RUN apt-get update && apt-get -q -y install \
     openjdk-17-jre-headless \
