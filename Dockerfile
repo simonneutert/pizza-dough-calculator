@@ -1,4 +1,4 @@
-FROM FROM oven/bun:latest AS build
+FROM oven/bun:latest AS build
 
 RUN apt-get update && apt-get -q -y install \
     openjdk-17-jre-headless \
