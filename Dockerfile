@@ -16,7 +16,7 @@ COPY public/index.html /app/public/index.html
 
 RUN npx shadow-cljs release frontend
 
-FROM nginx:1-alpine
+FROM nginx:1-slim
 
 COPY --from=build /app/public/index.html /usr/share/nginx/html/index.html
 COPY --from=build /app/public/js/main.js /usr/share/nginx/html/js/main.js
