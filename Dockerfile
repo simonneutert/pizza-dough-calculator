@@ -14,7 +14,7 @@ COPY shadow-cljs.edn /app/
 COPY src /app/src
 COPY public/index.html /app/public/index.html
 
-RUN bunx shadow-cljs release frontend
+RUN bun run shadow-cljs release frontend
 
 FROM nginx:1-bookworm
 
