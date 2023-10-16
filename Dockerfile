@@ -1,10 +1,10 @@
-FROM node:20-alpine AS build
+FROM node:lts-bookworm-slim AS build
 
-RUN apk update \
-  && apk upgrade \
-  && apk add curl openjdk17-jre-headless
+RUN apt-get update && apt-get -q -y install \
+    openjdk-17-jre-headless \
+    curl
 
-RUN curl -s https://download.clojure.org/install/linux-install-1.11.1.1413.sh | ash \
+RUN curl -s https://download.clojure.org/install/linux-install-1.11.1.1413.sh | bash \
     && rm -rf /var/lib/apt/lists/*
 
 RUN npm i -g shadow-cljs
