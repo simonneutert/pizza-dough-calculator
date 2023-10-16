@@ -1,10 +1,10 @@
-FROM node:16-buster AS build
+FROM node:20-bookworm AS build
 
 RUN apt-get update && apt-get -q -y install \
-    openjdk-11-jre-headless \
+    openjdk-17-jre-headless \
     curl 
 
-RUN curl -s https://download.clojure.org/install/linux-install-1.11.1.1165.sh | bash \
+RUN curl -s https://download.clojure.org/install/linux-install-1.11.1.1413.sh | bash \
     && rm -rf /var/lib/apt/lists/*
 
 RUN npm i -g shadow-cljs
