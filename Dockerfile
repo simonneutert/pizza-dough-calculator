@@ -2,7 +2,7 @@ FROM node:20-alpine AS build
 
 RUN apk update \
   && apk upgrade \
-  && apk add curl openjdk11-jre-headless
+  && apk add curl openjdk11
 
 RUN curl -s https://download.clojure.org/install/linux-install-1.11.1.1413.sh | ash \
     && rm -rf /var/lib/apt/lists/*
