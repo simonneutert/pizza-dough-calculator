@@ -1,4 +1,4 @@
-FROM oven/bun:debian AS build
+FROM oven/bun-debian AS build
 
 RUN apt-get update && apt-get -q -y install \
     openjdk-17-jre-headless \
