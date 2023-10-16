@@ -1,8 +1,6 @@
-FROM node:20-bookworm AS build
+FROM node:20-alpine AS build
 
-RUN apt-get update && apt-get -q -y install \
-    openjdk-17-jre-headless \
-    curl 
+RUN apk add curl openjdk17-jre-headless
 
 RUN curl -s https://download.clojure.org/install/linux-install-1.11.1.1413.sh | bash \
     && rm -rf /var/lib/apt/lists/*
