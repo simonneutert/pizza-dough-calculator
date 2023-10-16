@@ -21,6 +21,14 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        platform:
+          - linux/amd64
+          - linux/arm/v6
+          - linux/arm/v7
+          - linux/arm64
     permissions:
       contents: read
       packages: write
@@ -67,5 +75,5 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          platforms: linux/amd64 #,linux/arm32/v6,linux/arm32/v7,linux/arm64/v8
+          platforms: ${{matrix.platform}} # linux/amd64 #,linux/arm32/v6,linux/arm32/v7,linux/arm64/v8
           
