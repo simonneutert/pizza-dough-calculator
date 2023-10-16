@@ -7,14 +7,14 @@ RUN apt-get update && apt-get -q -y install \
 RUN curl -s https://download.clojure.org/install/linux-install-1.11.1.1413.sh | bash \
     && rm -rf /var/lib/apt/lists/*
 
-RUN npm i -g shadow-cljs
+RUN bun install shadow-cljs
 
 WORKDIR /app
 COPY shadow-cljs.edn /app/
 COPY src /app/src
 COPY public/index.html /app/public/index.html
 
-RUN npx shadow-cljs release frontend
+RUN bunx shadow-cljs release frontend
 
 FROM nginx:1-bookworm
 
