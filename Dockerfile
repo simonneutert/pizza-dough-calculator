@@ -1,7 +1,7 @@
 FROM node:20-bookworm AS build
 
 RUN apt-get update && apt-get -q -y install \
-    openjdk-11-jre-headless \
+    openjdk-17-jre-headless \
     curl 
 
 RUN curl -s https://download.clojure.org/install/linux-install-1.11.1.1413.sh | bash \
