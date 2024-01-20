@@ -16,10 +16,10 @@
    :yeast-type "fresh"
    :water-share 63
    :salt-percentage 0.0118478
-   :sugar-percentage 0.00239130
+   :sugar-percentage 0.0036
    :oil-percentage 0.0177173913
-   :yeast {:fresh 0.0045
-           :dry 0.0015}})
+   :yeast {:fresh 0.005
+           :dry 0.0016667}})
 
 (defn new-york
   [pizza]

@@ -9,6 +9,8 @@ This simple Shadow-Cljs project is an [hommage to Städler Made](https://www.sta
 
 This project is not much more than a cheap rip-off from [Städler Made](https://www.stadlermade.com). Who have undeniabely one of THE BEST recipes for pizza dough's on their website!
 
+☝️ Please bear in mind that the recipe's in this project are adjusted to our household and taste.
+
 Please, visit their page and take a look around before continuing here, they really deserve it!  
 All the following text/recipe/howto content is a copy taken from: https://www.stadlermade.com/pizza-calculator/ (last copied 2022-09-23)
 
@@ -24,28 +26,35 @@ head over to the [README.DEVELOPMENT.md](https://github.com/simonneutert/pizza-d
 
 ## Let's make pizzas 🍕
 
-- [Styles](#styles)
-- [Neapolitan pizza](#neapolitan-pizza)
-  - [Ingredients ratio](#ingredients-ratio)
-    - [Instructions](#instructions)
-- [New York pizza (American)](#new-york-pizza--american-)
-  - [Ingredients ratio](#ingredients-ratio-1)
-    - [Instructions](#instructions-1)
-- [Sicilian pizza](#sicilian-pizza)
-  - [Ingredients ratio](#ingredients-ratio-2)
-    - [Instructions](#instructions-2)
-- [Size](#size)
-  - [Neapolitan & American pizza](#neapolitan---american-pizza)
-  - [Sicilian pizza](#sicilian-pizza-1)
-- [Flour](#flour)
-- [Water](#water)
-- [Salt](#salt)
-- [Yeast](#yeast)
-- [Kneading](#kneading)
-  - [Mixing and Kneading](#mixing-and-kneading)
-- [Cold Fermenting](#cold-fermenting)
-  - [Option 1: Room temperature (6-24 hours)](#option-1--room-temperature--6-24-hours-)
-  - [Option 2: Next-level (8-72 hours)](#option-2--next-level--8-72-hours-)
+- [pizza-dough-calculator](#pizza-dough-calculator)
+  - [Important](#important)
+    - [Important for DEVELOPERS](#important-for-developers)
+  - [Let's make pizzas 🍕](#lets-make-pizzas-)
+  - [Styles](#styles)
+  - [Neapolitan pizza](#neapolitan-pizza)
+    - [Ingredients ratio](#ingredients-ratio)
+      - [Instructions](#instructions)
+  - [New York pizza (American)](#new-york-pizza-american)
+    - [Ingredients ratio](#ingredients-ratio-1)
+      - [Instructions](#instructions-1)
+  - [Sicilian pizza](#sicilian-pizza)
+    - [Ingredients ratio](#ingredients-ratio-2)
+      - [Instructions](#instructions-2)
+  - [Size](#size)
+    - [Neapolitan \& American pizza](#neapolitan--american-pizza)
+      - [S Pizza = Ø 16 CM/6 INCH](#s-pizza--ø-16-cm6-inch)
+      - [M Pizza = Ø 28CM/ 11 INCH](#m-pizza--ø-28cm-11-inch)
+      - [L Pizza = Ø 34CM/ 13 INCH](#l-pizza--ø-34cm-13-inch)
+    - [Sicilian pizza](#sicilian-pizza-1)
+  - [Flour](#flour)
+  - [Water](#water)
+  - [Salt](#salt)
+  - [Yeast](#yeast)
+  - [Kneading](#kneading)
+    - [Mixing and Kneading](#mixing-and-kneading)
+  - [Cold Fermenting](#cold-fermenting)
+      - [Option 1: Room temperature (6-24 hours)](#option-1-room-temperature-6-24-hours)
+      - [Option 2: Next-level (8-72 hours)](#option-2-next-level-8-72-hours)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
