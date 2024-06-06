@@ -3,16 +3,16 @@
 > Imitation is the sincerest form of flattery that mediocrity can pay to greatness.  
 > \- Oscar Wilde.
 
-This simple Shadow-Cljs project is an [hommage to Städler Made](https://www.stadlermade.com).
+This simple Shadow-Cljs project is an [homage to Städler Made](https://www.stadlermade.com).
 
 ## Important
 
-This project is not much more than a cheap rip-off from [Städler Made](https://www.stadlermade.com). Who have undeniabely one of THE BEST recipes for pizza dough's on their website!
+This project is not much more than a cheap rip-off of [Städler Made](https://www.stadlermade.com), who undeniably have one of THE BEST recipes for pizza dough on their website!
 
-☝️ Please bear in mind that the recipe's in this project are adjusted to our household and taste.
+☝️ Please bear in mind that the recipes in this project are adjusted to our household and taste.
 
 Please, visit their page and take a look around before continuing here, they really deserve it!  
-All the following text/recipe/howto content is a copy taken from: https://www.stadlermade.com/pizza-calculator/ (last copied 2022-09-23)
+All the following text/recipe/how-to content is a copy taken from: https://www.stadlermade.com/pizza-calculator/ (last copied 2022-09-23)
 
 **It's the guys from Städler who deserve all the credits!**
 
