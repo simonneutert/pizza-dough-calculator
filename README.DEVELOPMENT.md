@@ -4,13 +4,17 @@ this is a very basic [shadow-cljs](https://github.com/thheller/shadow-cljs) proj
 
 ## VS Code + Calva
 
-This is how I do it with *Node 16.17.0* and Clojure installed in VS Code:
+This is how I do it with *Node 22.8.0* and Clojure installed in VS Code:
 
 1. from the command palette (Shift+CMD+P) `Start a REPL and Connect (aka Jack-In)`
-2. check ":frontend" + ":test" when prompted
-3. ☕️
-4. visit [localhost:8080](localhost:8080)
-5. develop with the REPL
+2. choose `shadow-cljs`
+3. check ":frontend" + ":test" when prompted
+4. ☕️ wait for the REPL to start
+5. Select which build to connect to, choose `:frontend`
+6. visit [localhost:8080](localhost:8080)
+7. develop with the REPL
+
+After this, open the test file, hit `CMD+S` or `CTRL+S` to save the file and the tests will run automatically. The result will be printed to your REPL.
 
 ## Autoformat Code
 
