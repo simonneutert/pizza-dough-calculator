@@ -37,3 +37,16 @@ What's the one ingredient you cannot buy at the store? **TIME, you knew it all a
 ### Readme for other DEVELOPERS<!-- omit from toc -->
 
 head over to the [README.DEVELOPMENT.md](https://github.com/simonneutert/pizza-dough-calculator/blob/main/README.DEVELOPMENT.md).
+
+
+### UI Designer Wanted badly!<!-- omit from toc -->
+
+If you're a UI designer and you're reading this ... and if you agree with the one-page and one page alone decision, then please help me out!
+
+Here's what I'd want:
+
+- A simple, clean, and modern design, productive and easy to use
+- A responsive design (mobile first, tablet best, desktop nice)
+- Make it easy to read and easy to follow along (while making dough in the kitchen)
+- Animations or transitions only if they add value
+- use of vanilla/modern css (no bootstrap, no tailwind or similar)
