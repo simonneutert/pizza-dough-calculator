@@ -39,7 +39,7 @@ What's the one ingredient you cannot buy at the store? **TIME, you knew it all a
 head over to the [README.DEVELOPMENT.md](https://github.com/simonneutert/pizza-dough-calculator/blob/main/README.DEVELOPMENT.md).
 
 
-### UI Designer Wanted badly!<!-- omit from toc -->
+### UI Designer wanted badly!<!-- omit from toc -->
 
 If you're a UI designer and you're reading this ... and if you agree with the one-page and one page alone decision, then please help me out!
 
