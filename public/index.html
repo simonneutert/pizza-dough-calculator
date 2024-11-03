@@ -1,426 +1,761 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pizza Calculator</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pizza Calculator</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
-</head>
+    <script src="/js/main.js" type="text/javascript"></script>
+  </head>
 
-<body>
-  <script src="/js/main.js" type="text/javascript"></script>
-  <div class="container-md">
-    <div id="app" class="my-4">
-      <h1>Pizza Dough Calculator</h1>
+  <body>
+    <div class="container-md">
+      <div id="app" class="my-4">
+        <h1>Pizza Dough Calculator</h1>
 
-      <div class="alert alert-primary" role="alert">
-        Code is on
-        <a href="https://github.com/simonneutert/pizza-dough-calculator" target="_blank" rel="noopener noreferrer">
-          GitHub!
-        </a>
-      </div>
-
-
-      <div class="card my-4">
-        <div class="card-body">
-          <ol>
-            <li>
-              This project is not much more than a cheap rip-off from <a href="https://www.stadlermade.com">Städler
-                Made</a> has undeniabely one of THE BEST recipes for pizza dough&#39;s on their website!
-              <br />
-              <strong>Please, visit <a href="https://www.stadlermade.com">their website</a></strong> and take a look
-              around before
-              continuing here, they really deserve it!
-            </li>
-            <li>
-              Visual learner? Even better, the Städler Team got you covered: <a
-                href="https://www.youtube.com/watch?v=OHb0he4pqns">Learn to bake pizzas at home on YouTube!</a>
-            </li>
-            <li>
-              <strong>
-                The pizza dough calculator assumes that you're using "tipo 00" flour.
-              </strong>
-              <br />
-              If this is <b>NOT</b> the case, you WILL need to make
-              changes to the water percentage indicated!
-            </li>
-          </ol>
+        <div class="alert alert-primary" role="alert">
+          Code is on
+          <a
+            href="https://github.com/simonneutert/pizza-dough-calculator"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub!
+          </a>
         </div>
-      </div>
 
+        <div class="card my-4">
+          <div class="card-body">
+            <ol>
+              <li>
+                This project is not much more than a cheap rip-off from <a
+                  href="https://www.stadlermade.com"
+                >Städler Made</a> has undeniabely one of THE BEST recipes for
+                pizza dough&#39;s on their website!
+                <br />
+                <strong>Please, visit <a href="https://www.stadlermade.com"
+                  >their website</a></strong> and take a look around before
+                continuing here, they really deserve it!
+              </li>
+              <li>
+                Visual learner? Even better, the Städler Team got you covered:
+                <a href="https://www.youtube.com/watch?v=OHb0he4pqns"
+                >Learn to bake pizzas at home on YouTube!</a>
+              </li>
+              <li>
+                <strong>
+                  The pizza dough calculator assumes that you're using "tipo 00"
+                  flour.
+                </strong>
+                <br />
+                If this is <b>NOT</b> the case, you will definitely need to make
+                changes to the water percentage indicated.
+              </li>
+            </ol>
 
-      <div class="row">
-        <div class="col-md">
-          <form>
-            <div class="mb-3">
-              <label for="style" class="form-label">Style:</label>
-              <select class="form-control" name="style" id="style">
-                <option value="neapolitan" selected>Neapolitan</option>
-                <option value="new-york">New-York</option>
-                <option value="sicilian">Sicilian</option>
-                <option value="pan">Homemade Pan</option>
-              </select>
-            </div>
+            <hr />
 
-            <div class="mb-3">
-              <label for="number" class="form-label">Pizzas:</label>
-              <input class="form-control" type="number" name="number" id="number" min="0" max="20">
-            </div>
+            <p>
+              Good, then let's get started! 🍕
+            </p>
+          </div>
+        </div>
 
-            <div class="mb-3">
-              <label for="grams" class="form-label">Grams per Pizza:</label>
-              <div class="input-group">
-                <input class="form-control" type="number" name="grams" id="grams" min="100" max="1000" step="10">
-                <span class="input-group-text">g</span>
+        <div class="row">
+          <div class="col-md">
+            <form>
+              <div class="mb-3">
+                <label for="style" class="form-label">Style:</label>
+                <select class="form-control" name="style" id="style">
+                  <option value="neapolitan" selected>Neapolitan</option>
+                  <option value="new-york">New-York</option>
+                  <option value="sicilian">Sicilian</option>
+                  <option value="pan">Homemade Pan</option>
+                </select>
               </div>
-            </div>
 
-            <div class="mb-3">
-              <label for="yeast" class="form-label">Type of Yeast:</label>
-              <select class="form-control" name="yeast" id="yeast">
-                <option value="fresh" selected>fresh</option>
-                <option value="dry">instant/dry</option>
-              </select>
-            </div>
-          </form>
-        </div>
+              <div class="mb-3">
+                <label for="number" class="form-label">Pizzas:</label>
+                <input
+                  class="form-control"
+                  type="number"
+                  name="number"
+                  id="number"
+                  min="0"
+                  max="20"
+                />
+              </div>
 
-        <div class="col-md">
-          <div class="card mt-2">
-            <div class="card-body">
-              <p id="pizza-recipe" class="my-4"></p>
+              <div class="mb-3">
+                <label for="grams" class="form-label">Grams per Pizza:</label>
+                <div class="input-group">
+                  <input
+                    class="form-control"
+                    type="number"
+                    name="grams"
+                    id="grams"
+                    min="100"
+                    max="1000"
+                    step="10"
+                  />
+                  <span class="input-group-text">g</span>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="yeast" class="form-label">Type of Yeast:</label>
+                <select class="form-control" name="yeast" id="yeast">
+                  <option value="fresh" selected>fresh</option>
+                  <option value="dry">instant/dry</option>
+                </select>
+              </div>
+            </form>
+          </div>
+
+          <div class="col-md">
+            <div class="card mt-2">
+              <div class="card-body">
+                <p id="pizza-recipe" class="my-4"></p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <hr>
+      <hr />
 
-    <div id="readme">
-      <h4 id="let-s-make-pizzas-">Let&#39;s make pizzas 🍕</h4>
+      <div class="my-4">
+        <div class="alert alert-danger" role="alert">
+          <strong>
+            We strongly encourage to at least skim-read the following sections,
+            before starting your pizza dough adventure!
+          </strong>
+        </div>
+      </div>
 
-      <p>The following table of contents looks like it's much to chew - <strong>but</strong> it is absolutely worth the
-        <strong>five minutes read time!</strong>
-      </p>
+      <hr />
 
-      <ul>
-        <li><a href="#styles">Styles</a></li>
-        <li><a href="#neapolitan-pizza">Neapolitan pizza</a>
+      <div id="readme">
+        <h4 id="let-s-make-pizzas-">Let&#39;s make pizzas 🍕</h4>
+
+        <p>
+          The following table of contents looks like it's much to chew - <strong
+          >but</strong> it is absolutely worth the
+          <strong>five minutes read time!</strong>
+          <br />
+          It will improve what you're about to bake and then chew. 🍕
+        </p>
+
+        <div class="m-4">
           <ul>
-            <li><a href="#ingredients-ratio">Ingredients ratio</a>
+            <li><a href="#pizza-styles">Pizza Styles</a></li>
+            <ul>
+              <li>
+                <a href="#neapolitan-pizza">Neapolitan pizza</a>
+                <ul>
+                  <li><a href="#ingredients-ratio">Ingredients ratio</a></li>
+                  <li><a href="#instructions">Instructions</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#new-york-pizza-american-"
+                >New York pizza (American)</a>
+                <ul>
+                  <li><a href="#ingredients-ratio-1">Ingredients ratio</a></li>
+                  <li><a href="#instructions-1">Instructions</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#sicilian-pizza">Sicilian pizza</a>
+                <ul>
+                  <li><a href="#ingredients-ratio-2">Ingredients ratio</a></li>
+                  <li><a href="#instructions-2">Instructions</a></li>
+                </ul>
+              </li>
+            </ul>
+            <li>
+              <a href="#size">Sizing your Pizzas</a>
               <ul>
-                <li><a href="#instructions">Instructions</a></li>
+                <li>
+                  <a href="#neapolitan-american-pizza"
+                  >Neapolitan &amp; American pizza</a>
+                </li>
+                <li><a href="#sicilian-pizza-1">Sicilian pizza</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#ingredients">Ingredients</a>
+
+              <ul>
+                <li><a href="#flour-info">Flour</a></li>
+                <li><a href="#water-info">Water</a></li>
+                <li><a href="#salt-info">Salt</a></li>
+                <li><a href="#yeast-info">Yeast</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="#dough">Working with the dough</a>
+              <ul>
+                <li>
+                  <a href="#kneading-info">Kneading</a>
+                </li>
+                <li>
+                  <a href="#fermenting">Cold Fermenting</a>
+                  <ul>
+                    <li>
+                      <a href="#option-1-room-temperature-6-24-hours"
+                      >Option 1: Room temperature (6-24 hours)</a>
+                    </li>
+                    <li>
+                      <a href="#option-2-cold-fermenting"
+                      >Option 2: Cold fermenting (8-72 hours)</a>
+                    </li>
+                    <li>
+                      <a href="#rising-proofing"
+                      >What's the difference between rising and proofing?</a>
+                    </li>
+                  </ul>
+                </li>
               </ul>
             </li>
           </ul>
-        </li>
-        <li><a href="#new-york-pizza-american-">New York pizza (American)</a>
-          <ul>
-            <li><a href="#ingredients-ratio-1">Ingredients ratio</a>
-              <ul>
-                <li><a href="#instructions-1">Instructions</a></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li><a href="#sicilian-pizza">Sicilian pizza</a>
-          <ul>
-            <li><a href="#ingredients-ratio-2">Ingredients ratio</a>
-              <ul>
-                <li><a href="#instructions-2">Instructions</a></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li><a href="#size">Size</a>
-          <ul>
-            <li><a href="#neapolitan-american-pizza">Neapolitan &amp; American pizza</a></li>
-            <li><a href="#sicilian-pizza-1">Sicilian pizza</a></li>
-          </ul>
-        </li>
-        <li><a href="#flour-info">Flour</a></li>
-        <li><a href="#water-info">Water</a></li>
-        <li><a href="#salt-info">Salt</a></li>
-        <li><a href="#yeast-info">Yeast</a></li>
-        <li><a href="#kneading-info">Kneading</a>
-          <ul>
-            <li><a href="#mixing-and-kneading">Mixing and Kneading</a></li>
-          </ul>
-        </li>
-        <li><a href="#cold-fermenting">Cold Fermenting</a>
-          <ul>
-            <li><a href="#option-1-room-temperature-6-24-hours">Option 1: Room temperature (6-24 hours)</a></li>
-            <li><a href="#option-2-next-level-8-72-hours">Option 2: Next-level (8-72 hours)</a></li>
-          </ul>
-        </li>
-      </ul>
+        </div>
 
-      <h2 id="styles">Styles</h2>
-      <p>Flour, water, salt yeast and a blazing hot wood-fired oven. That's how the very first pizzas were made, and
-        it's
-        how they're still doing it today in Naples.</p>
-      <h2 id="neapolitan-pizza">Neapolitan pizza</h2>
-      <p>The best Neapolitan pizza should have a big, beautiful crust that's slightly crispy and is covered with little
-        dark spots caused by the sizzling heat. The centre of the pizza should be thin and mostly soft and have just a
-        few
-        delicious toppings combined with a gentle touch of smoke from the wood-fired oven.</p>
-      <h3 id="ingredients-ratio">Ingredients ratio</h3>
-      <ul>
-        <li>Tipo 00 or bread flour: 100%</li>
-        <li>Salt: 3%</li>
-        <li>Yeast: 0.2 %</li>
-        <li>Water: 55% – 75%</li>
-      </ul>
-      <h4 id="instructions">Instructions</h4>
-      <p>Proofing at room temperature (min 6 – max 24 hours) or cold fermenting (min 8 – max 72 hours)<br>Oven
-        temperature: 400 – 550°C <br>Baking time: 1 – 4 mins.</p>
-      <h2 id="new-york-pizza-american-">New York pizza (American)</h2>
-      <p>When Italians started immigrating to America, they took their beloved pizza with them to the USA. Most Italians
-        started making pizza in coal or gas ovens that weren't as hot as the wood-fired ovens in Italy. This meant that
-        the pizza needed more time to bake and that the recipe had to be adjusted to the longer baking time. This is how
-        the New York pizza was born.</p>
-      <p>When stretching out a New York pizza you will leave it slightly thicker than a Neapolitan or a Roman pizza.</p>
-      <p>It takes between 8 and 15 minutes to bake.</p>
-      <p>A Neapolitan pizza would dry out during this period. The New Yorker doesn't because of its key ingredients: oil
-        &amp; sugar. The oil protects the dough from drying out and the sugar helps the crust to brown more evenly,
-        giving
-        it more flavour.</p>
-      <h3 id="ingredients-ratio-1">Ingredients ratio</h3>
-      <ul>
-        <li>Tipo 00 or bread flour: 100%</li>
-        <li>Sugar: 2%</li>
-        <li>Salt: 2%</li>
-        <li>Fresh yeast: 0.4%</li>
-        <li>Olive oil: 2.5%</li>
-        <li>Water: 55% – 65%</li>
-      </ul>
-      <h4 id="instructions-1">Instructions</h4>
-      <p>Proofing at room temperature (min 6 – max 24 hours) or cold fermenting (min 8 – max 72 hours)<br>Oven
-        temperature: 200 – 300°C<br>Baking time: 8 – 15 min s.</p>
-      <h2 id="sicilian-pizza">Sicilian pizza</h2>
-      <p><em>also known as sfincione , focaccia, thick-crust, deep-dish or pan pizza</em></p>
-      <p>The Sicilian pizza is a very versatile pizza that goes by lots of different names, depending on the region,
-        city,
-        or country where it's made. Though the name and the toppings may vary a lot, the basics stay the same.</p>
-      <p>These pizzas have a thicker, softer, and more bread-like texture than the Neapolitan, Roman or New York pizza.
-        They're baked in a pan or baking tray that's coated heavily with olive oil. As the oil heats up in the oven, it
-        will fry the base of the pizza, making it super crispy and delicious.</p>
-      <h3 id="ingredients-ratio-2">Ingredients ratio</h3>
-      <ul>
-        <li>Tipo 00 or bread flour: 100%</li>
-        <li>Salt: 2%</li>
-        <li>Yeast: 1.5 %</li>
-        <li>Olive oil: 1.5%</li>
-        <li>Water: 55% – 85%</li>
-      </ul>
-      <h4 id="instructions-2">Instructions</h4>
-      <p>Proofing at room temperature (min 6 – max 24 hours) or cold fermenting (min 8 – max 72 hours)<br>Oven
-        temperature: 250 – 280°C<br>Baking time: 15 – 20 mins.</p>
-      <h2 id="size">Size</h2>
-      <h3 id="neapolitan-american-pizza">Neapolitan &amp; American pizza</h3>
-      <p>When making pizza, you'll first need to make the dough balls before they can be turned into those delicious
-        wood-fired pieces of heaven.</p>
-      <p>The sizing of dough balls for Neapolitan and American pizza is pretty similar. Pizzas come in small, medium and
-        large sizes. The calculator is set for medium pizzas. If you're planning to make your pizzas a different size,
-        you
-        can change this setting.</p>
-      <p>The figure below shows the right dough ball weight for the different pizza sizes. As you can see, the
-        calculator
-        adds a bit of weight for the American pizza, because the American pizza is supposed to be a bit thicker than the
-        Neapolitan.</p>
-      <h4 id="s-pizza-16-cm-6-inch">S Pizza = Ø 16 CM</h4>
-      <ul>
-        <li>Neapolitan S = 160 gram dough ball</li>
-        <li>American S = 175 gram dough ball</li>
-      </ul>
-      <h4 id="m-pizza-28cm-11-inch">M Pizza = Ø 28CM</h4>
-      <ul>
-        <li>Neapolitan M = 230 gram dough ball</li>
-        <li>American M = 240 gram dough ball</li>
-      </ul>
-      <h4 id="l-pizza-34cm-13-inch">L Pizza = Ø 34CM</h4>
-      <ul>
-        <li>Neapolitan L = 300 gram dough ball</li>
-        <li>American L = 315 gram dough ball</li>
-      </ul>
+        <hr />
 
-      <h3 id="sicilian-pizza-1">Sicilian pizza</h3>
-      <p><em>also known as sfincione, focaccia, thick-crust, deep-dish or pan pizza.</em></p>
-      <p>The sizing of this pizza is a bit different, since this pizza isn't baked on the stone in your oven, but in a
-        baking tray/pan that goes into your oven. Seeing as everyone has different baking trays, you can't just talk
-        about
-        small or medium pizzas.</p>
-      <p>For a 25x20cm / 10×8-inch baking tray, you'll need to make 650 grams of dough. If your baking tray is bigger or
-        smaller, you'll have to play around with the weight until you find the perfect recipe for your baking pan.</p>
-      <h2 id="flour-info">Flour</h2>
-      <p>You produce flour by grinding grain, primarily wheat. There are two types of grain: a hard and a soft type.
-        Hard
-        grain is ground into a yellow flour, which is best for making pasta, and soft grain is ground into a white
-        flour,
-        which is great for bread and pizza. For the best possible pizza dough, you need a very fine white flour that can
-        only be obtained after a long and slow process of grinding and sifting the wheat. The finest flour you can buy
-        is
-        known as tipo 00.</p>
-      <p>Due to its fineness, tipo 00 flour can absorb very large amounts of water, ranging from 50% all the way up to
-        100%. This allows your pizza to stay nice and crispy, without drying out in the oven.</p>
-      <p>If you can't find tipo 00 flour, you can use regular bread flour. You should never use all-purpose or cake
-        flour.
-        If you use bread flour, which hasn't been sieved as finely as tipo 00, you won't be able to use as much water.
-        It's still possible to make pretty good pizzas with normal bread flour, but I'd recommend only using between 50%
-        and 60% water to prevent the dough from getting soupy.</p>
+        <div>
+          <h2 id="pizza-styles">Pizza Styles</h2>
 
-      <h2 id="water-info">Water</h2>
-      <p>The pizza dough calculator assumes that you're using "tipo 00" flour. If this is the case, you won't need to
-        make
-        any changes to the water percentage indicated.</p>
-      <p>In case you're using regular bread flour, it would be wise to set the parameter between 50% and 55%, since
-        regular bread flour can't absorb large quantities of water. If you don't use less water with bread flour, your
-        dough will get wet and soupy.</p>
+          <div class="card p-2 my-2">
+            <div class="row my-4">
+              <div class="col-8">
+                <h3 id="neapolitan-pizza">Neapolitan pizza</h3>
+                <p>
+                  The best Neapolitan pizza should have a big, beautiful crust
+                  that's slightly crispy and is covered with little dark spots
+                  caused by the sizzling heat. The centre of the pizza should be
+                  thin and mostly soft and have just a few delicious toppings
+                  combined with a gentle touch of smoke from the wood-fired
+                  oven.
+                </p>
+                <p>
+                  Using your fingertips, press the dough gently from the center
+                  outward, working in a circular motion while avoiding the edges
+                  to preserve the airy crust. Rotate the dough as you press,
+                  allowing it to stretch naturally. Let gravity assist in the
+                  process by lifting the dough and letting it stretch evenly.
+                  Handle the dough with minimal pressure to maintain the
+                  delicate network of bubbles that will create the perfect light
+                  and airy texture when baked. This careful method ensures that
+                  the final crust will have the signature puff and slight
+                  charring that defines an authentic Neapolitan pizza.
+                </p>
+              </div>
+              <div class="col-4">
+                <h4 id="ingredients-ratio">Ingredients ratio</h4>
+                <ul>
+                  <li>Tipo 00 flour: 100%</li>
+                  <li>Salt: 3%</li>
+                  <li>Yeast: 0.2 %</li>
+                  <li>Water: 55% – 75%</li>
+                </ul>
+                <h4 id="instructions">Instructions</h4>
+                <p>
+                  Proofing at room temperature (min 6 – max 24 hours) or cold
+                  fermenting (min 8 – max 72 hours)<br />Oven temperature: 300 –
+                  550°C
+                  <br />Baking time: 1 – 4 mins.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card p-2 my-2">
+            <div class="row my-4">
+              <div class="col col-8">
+                <h3 id="new-york-pizza-american-">New York pizza (American)</h3>
+                <p>
+                  When Italians started immigrating to America, they took their
+                  beloved pizza with them to the USA. Most Italians started
+                  making pizza in coal or gas ovens that weren't as hot as the
+                  wood-fired ovens in Italy. This meant that the pizza needed
+                  more time to bake and that the recipe had to be adjusted to
+                  the longer baking time. This is how the New York pizza was
+                  born.
+                </p>
+                <p>
+                  When stretching out a New York pizza you will leave it
+                  slightly thicker than a Neapolitan or a Roman pizza.
+                </p>
+                <p>It takes between 8 and 15 minutes to bake.</p>
+                <p>
+                  A Neapolitan pizza would dry out during this period. The New
+                  Yorker doesn't because of its key ingredients: oil &amp;
+                  sugar. The oil protects the dough from drying out and the
+                  sugar helps the crust to brown more evenly, giving it more
+                  flavour.
+                </p>
+              </div>
+              <div class="col-4">
+                <h4 id="ingredients-ratio-1">Ingredients ratio</h4>
+                <ul>
+                  <li>Tipo 00 flour: 100%</li>
+                  <li>Sugar: 2%</li>
+                  <li>Salt: 2%</li>
+                  <li>Fresh yeast: 0.4%</li>
+                  <li>Olive oil: 2.5%</li>
+                  <li>Water: 55% – 65%</li>
+                </ul>
+                <h4 id="instructions-1">Instructions</h4>
+                <p>
+                  Proofing at room temperature (min 6 – max 24 hours) or cold
+                  fermenting (min 8 – max 72 hours)<br />Oven temperature: 200 –
+                  300°C<br />Baking time: 8 – 15 min s.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card p-2 my-2">
+            <div class="row my-4">
+              <div class="col col-8">
+                <h3 id="sicilian-pizza">Sicilian pizza</h3>
+                <p>
+                  <em>also known as sfincione , focaccia, thick-crust, deep-dish
+                    or pan pizza</em>
+                </p>
+                <p>
+                  The Sicilian pizza is a very versatile pizza that goes by lots
+                  of different names, depending on the region, city, or country
+                  where it's made. Though the name and the toppings may vary a
+                  lot, the basics stay the same.
+                </p>
+                <p>
+                  These pizzas have a thicker, softer, and more bread-like
+                  texture than the Neapolitan, Roman or New York pizza. They're
+                  baked in a pan or baking tray that's coated heavily with olive
+                  oil. As the oil heats up in the oven, it will fry the base of
+                  the pizza, making it super crispy and delicious.
+                </p>
+              </div>
+              <div class="col-4">
+                <h4 id="ingredients-ratio-2">Ingredients ratio</h4>
+                <ul>
+                  <li>Tipo 00 flour: 100%</li>
+                  <li>Salt: 2%</li>
+                  <li>Yeast: 1.5 %</li>
+                  <li>Olive oil: 1.5%</li>
+                  <li>Water: 55% – 85%</li>
+                </ul>
+                <h4 id="instructions-2">Instructions</h4>
+                <p>
+                  Proofing at room temperature (min 6 – max 24 hours) or cold
+                  fermenting (min 8 – max 72 hours)<br />Oven temperature: 250 –
+                  280°C<br />Baking time: 15 – 20 mins.
+                </p>
+              </div>
+            </div>
+          </div>
+          <h2 id="size">
+            Sizing your Pizzas
+          </h2>
+          <div class="card p-2 my-2">
+            <h3 id="neapolitan-american-pizza">
+              Neapolitan &amp; American pizza
+            </h3>
+            <p>
+              When making pizza, you'll first need to make the dough balls
+              before they can be turned into those delicious wood-fired pieces
+              of heaven.
+            </p>
+            <p>
+              The sizing of dough balls for Neapolitan and American pizza is
+              pretty similar. Pizzas come in small, medium and large sizes. The
+              calculator is set for medium pizzas. If you're planning to make
+              your pizzas a different size, you can change this setting.
+            </p>
+            <p>
+              The figure below shows the right dough ball weight for the
+              different pizza sizes. As you can see, the calculator adds a bit
+              of weight for the American pizza, because the American pizza is
+              supposed to be a bit thicker than the Neapolitan.
+            </p>
+            <div class="row my-4">
+              <div class="col col-md-4">
+                <h4 id="s-pizza-16-cm-6-inch">S Pizza = Ø 16 CM</h4>
+                <ul>
+                  <li>Neapolitan S = 160 gram dough ball</li>
+                  <li>American S = 175 gram dough ball</li>
+                </ul>
+              </div>
+              <div class="col col-md-4">
+                <h4 id="m-pizza-28cm-11-inch">M Pizza = Ø 28CM</h4>
+                <ul>
+                  <li>Neapolitan M = 230 gram dough ball</li>
+                  <li>American M = 240 gram dough ball</li>
+                </ul>
+              </div>
+              <div class="col col-md-4">
+                <h4 id="l-pizza-34cm-13-inch">L Pizza = Ø 34CM</h4>
+                <ul>
+                  <li>Neapolitan L = 300 gram dough ball</li>
+                  <li>American L = 315 gram dough ball</li>
+                </ul>
+              </div>
+            </div>
+          </div>
 
-      <h2 id="salt-info">Salt</h2>
-      <p>Salt mainly adds flavour to your dough, but it also protects the dough against the effects of harmful bacteria
-        and strengthens the gluten structure within the dough.</p>
-      <p>During the baking process, salt will give the crust a nice brown colour.</p>
-      <p>I would recommend using sea salt or kosher salt instead of table salt. Table salt is highly processed and only
-        contains a fraction of the beneficial minerals that sea and kosher salt have.</p>
+          <div class="card p-2 my-2">
+            <h3 id="sicilian-pizza-1">Sicilian pizza</h3>
+            <p>
+              <em>also known as sfincione, focaccia, thick-crust, deep-dish or
+                pan pizza.</em>
+            </p>
+            <p>
+              The sizing of this pizza is a bit different, since this pizza
+              isn't baked on the stone in your oven, but in a baking tray/pan
+              that goes into your oven. Seeing as everyone has different baking
+              trays, you can't just talk about small or medium pizzas.
+            </p>
+            <p>
+              For a 25x20cm / 10×8-inch baking tray, you'll need to make 650
+              grams of dough. If your baking tray is bigger or smaller, you'll
+              have to play around with the weight until you find the perfect
+              recipe for your baking pan.
+            </p>
+          </div>
+        </div>
 
-      <h2 id="yeast-info">Yeast</h2>
-      <p>
-        Yeast is a single-celled organism that is invisible to the naked eye.
-      </p>
-      <p>
-        This organism feeds on the sugars and starch in your dough and releases gases that create little air pockets
-        in the dough, which will make it rise and give it great flavour.
-      </p>
-      <p>
-        Why is there so little yeast in pizza dough?
-      </p>
-      <p>
-        That's because pizza dough is supposed to have a long, 8-hour rise. When you're giving your dough this much
-        time to rise, even a little bit of yeast will do the trick. You could speed up the process by adding more
-        yeast, but I wouldn't recommend that! A slow rise will enhance the dough's flavour, while also making it more
-        nutritional!
-      </p>
-      <p>
-        What if I use dry yeast instead of fresh yeast?
-      </p>
-      <p>
-        No problem. You can also use dry yeast. Just make sure to use half as much as the amount of fresh yeast
-        recommended by the calculator. That's because dry yeast is concentrated, so dry yeast is much more potent than
-        the same amount of fresh yeast.
-      </p>
+        <hr />
 
-      <h2 id="kneading-info">Kneading</h2>
-      <p>You'll need:</p>
-      <ul>
-        <li>2 bowls</li>
-        <li>A spoon</li>
-        <li>Scales that can measure grams</li>
-        <li>Flour, water, yeast, and salt</li>
-      </ul>
-      <p>
-        Go to the calculator, enter your preferred style and the number of pizzas you'd like to make.<br>Simply press
-        the calculate button and BOOM! you'll have a custom-made recipe.
-      </p>
+        <div>
+          <h2 id="ingredients">Ingredients</h2>
+          <div class="card p-2 my-2">
+            <div class="row">
+              <div class="col col-md-6 p-4">
+                <h3 id="flour-info">Flour</h3>
+                <p>
+                  You produce flour by grinding grain, primarily wheat. There
+                  are two types of grain: a hard and a soft type. Hard grain is
+                  ground into a yellow flour, which is best for making pasta,
+                  and soft grain is ground into a white flour, which is great
+                  for bread and pizza. For the best possible pizza dough, you
+                  need a very fine white flour that can only be obtained after a
+                  long and slow process of grinding and sifting the wheat. The
+                  finest flour you can buy is known as tipo 00.
+                </p>
+                <p>
+                  Due to its fineness, tipo 00 flour can absorb very large
+                  amounts of water, ranging from 50% all the way up to 100%.
+                  This allows your pizza to stay nice and crispy, without drying
+                  out in the oven.
+                </p>
+                <p>
+                  If you can't find tipo 00 flour, you can use regular bread
+                  flour. You should never use all-purpose or cake flour. If you
+                  use bread flour, which hasn't been sieved as finely as tipo
+                  00, you won't be able to use as much water. It's still
+                  possible to make pretty good pizzas with normal bread flour,
+                  but I'd recommend only using between 50% and 60% water to
+                  prevent the dough from getting soupy.
+                </p>
+              </div>
+              <div class="col col-md-6 p-4">
+                <h3 id="yeast-info">Yeast</h3>
+                <p>
+                  Yeast is a single-celled organism that is invisible to the
+                  naked eye.
+                </p>
+                <p>
+                  This organism feeds on the sugars and starch in your dough and
+                  releases gases that create little air pockets in the dough,
+                  which will make it rise and give it great flavour.
+                </p>
+                <p>
+                  Why is there so little yeast in pizza dough?
+                </p>
+                <p>
+                  That's because pizza dough is supposed to have a long, 8-hour
+                  rise. When you're giving your dough this much time to rise,
+                  even a little bit of yeast will do the trick. You could speed
+                  up the process by adding more yeast, but I wouldn't recommend
+                  that! A slow rise will enhance the dough's flavour, while also
+                  making it more nutritional!
+                </p>
+                <p>
+                  What if I use dry yeast instead of fresh yeast?
+                </p>
+                <p>
+                  No problem. You can also use dry yeast. Just make sure to use
+                  half as much as the amount of fresh yeast recommended by the
+                  calculator. That's because dry yeast is concentrated, so dry
+                  yeast is much more potent than the same amount of fresh yeast.
+                </p>
+              </div>
+              <div class="col col-md-6 p-4">
+                <h3 id="water-info">Water</h3>
+                <p>
+                  The pizza dough calculator assumes that you're using "tipo 00"
+                  flour. If this is the case, you won't need to make any changes
+                  to the water percentage indicated.
+                </p>
+                <p>
+                  In case you're using regular bread flour, it would be wise to
+                  set the parameter between 50% and 55%, since regular bread
+                  flour can't absorb large quantities of water. If you don't use
+                  less water with bread flour, your dough will get wet and
+                  soupy.
+                </p>
+              </div>
+              <div class="col col-md-6 p-4">
+                <h3 id="salt-info">Salt</h3>
+                <p>
+                  Salt mainly adds flavour to your dough, but it also protects
+                  the dough against the effects of harmful bacteria and
+                  strengthens the gluten structure within the dough.
+                </p>
+                <p>
+                  During the baking process, salt will give the crust a nice
+                  brown colour.
+                </p>
+                <p>
+                  I would recommend using sea salt or kosher salt instead of
+                  table salt. Table salt is highly processed and only contains a
+                  fraction of the beneficial minerals that sea and kosher salt
+                  have.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-      <h3 id="mixing-and-kneading">Mixing and Kneading</h3>
-      <ol>
-        <li>
-          <p>First, take 2 bowls and add the amount of flour specified by the calculator to one of them.</p>
-        </li>
-        <li>
+        <hr />
+
+        <div>
+          <h2 id="dough">Working with the dough</h2>
           <p>
-            Fill the second bowl with the amount of water the calculator tells you to use. Make sure that the water is
-            cold enough(anywhere between 12°C and 19°C will do).
+            <u>Before you get your hands dirty, please finish reading this
+              section! It will save you some trouble.
+            </u>
           </p>
-        </li>
-        <li>
-          <p>Add your salt (preferably kosher salt or sea salt), stir it into the water until it's completely dissolved.
-          </p>
-        </li>
-      </ol>
-      <p>Now it's time to dissolve the yeast in the water, but there's one big problem: Yeast doesn't like salty water,
-        as
-        the salt will damage the yeast. Which means your dough won't rise the way it's supposed to.</p>
-      <ol>
-        <li>
-          <p>So, you take some of the flour from bowl number one (about 10%) and mix it into your salty water. You don't
-            have to be super accurate, but it is a very important step because the flour will protect the yeast against
-            the salt, allowing it to do its job properly.</p>
-        </li>
-        <li>
-          <p>Ok. When you've stirred the salt and 10% of the flour into your water, you can add your fresh yeast. If you
-            don't have fresh yeast, you can use dry yeast, but make sure to use half of the amount recommended by the
-            calculator. (yes, it's a tiny amount, but trust me, it works!) When the yeast is stirred into the salty,
-            flowery water you can add the rest of the flour to it.</p>
-        </li>
-        <li>
-          <p>Now all the ingredients are in the bowl, you can loosely mix them with a spoon or with your fingertips.</p>
-        </li>
-        <li>
-          <p>When everything is mixed together, you can start kneading the dough until it has an even, soft and elastic
-            consistency. This usually takes about 8 to 20 minutes of kneading.</p>
-        </li>
-      </ol>
-      <p>Go to Cold Fermenting to see what's next.</p>
-      <h2 id="cold-fermenting">Cold Fermenting</h2>
-      <p>After the ingredients have been mixed and the dough has been kneaded, it's time for proofing and rising!</p>
-      <p>There are two options on how to let your dough proof and rise:</p>
-      <h4 id="option-1-room-temperature-6-24-hours">Option 1: Room temperature (6-24 hours)</h4>
-      <ol>
-        <li>After you knead the dough, you cover it with cling film or a damp towel and let it rest for 2 hours.</li>
-        <li>After 2 hours have passed, you can portion the dough into balls (See the calculator to find out how large
-          you
-          should make your balls of dough)</li>
-        <li>Cover the dough balls with cling film or a damp towel again and let them rise at room 18-21°C temperature
-          for
-          4-22 hours.</li>
-        <li>Then make the pizzas.</li>
-      </ol>
-      <h4 id="option-2-next-level-8-72-hours">Option 2: Next-level (8-72 hours)</h4>
-      <p>When you'd like to make next-level dough that's tastier, easier to digest and has a bigger rise on the crust
-        then
-        try this:</p>
-      <ol>
-        <li>
-          <p>After you knead your dough you can cold-proof it, meaning that you put it straight into the fridge (4 to
-            7°C)
-            covered with cling film or a damp towel. Or even better, put it in an airtight container.</p>
-        </li>
-        <li>
-          <p>Then leave it in the fridge for 8 to 72 hours.
-            When you take it out of the fridge, you place it on a lightly flowered tabletop so you can portion the dough
-            into balls (Check the calculator to find out how large you should make your balls of dough).</p>
-        </li>
-        <li>
-          <p>The last step is very important, the dough has to be at room temperature before shaping it into pizzas so
-            make sure to wait for 2 to 4 hours and then go go gooo!</p>
-        </li>
-      </ol>
-      <p>Yesss! You've made your own pizza dough.</p>
-      <p>Hold up. Wait a minute… What has just happened? What is proofing/fermenting and why does this make next-level
-        pizzas?</p>
-      <p>After you first mixed the ingredients, you set 2 processes in motion.</p>
-      <p>– In the first, the dough will start to rise because the yeast feeds on the sugars in the dough and produces
-        gases that cause the dough to increase in size.</p>
-      <p>– The other process is called proofing or fermenting. In this process, bacteria break down starches into
-        simpler
-        sugars.</p>
-      <p>The two processes start at the same time, but proofing takes a lot longer because the bacteria have to break
-        down
-        all the starches to make an airy dough that's easy to digest. That's why real good dough needs at least 8 hours
-        of
-        rising and preferably even more time to proof.</p>
-      <p>Proofing your dough for a long time leads to a tastier, more complex flavour, more beautiful charring and a
-        pizza
-        that's easier to digest. But you must stop the rising process by putting the dough in your fridge while the
-        proofing process continues.</p>
-      <p>🔥🔥🔥 Now it's time to make pizzaaasss! 🍕🍕🍕</p>
-    </div>
-</body>
+          <div class="card p-2 my-2">
+            <h3 id="kneading-info">Kneading</h3>
+            <p>You'll need:</p>
+            <ul>
+              <li>2 bowls</li>
+              <li>A spoon</li>
+              <li>Scales that can measure grams</li>
+              <li>Flour, water, yeast, and salt</li>
+            </ul>
+            <p>
+              Go to the calculator, enter your preferred style and the number of
+              pizzas you'd like to make.<br />Simply press the calculate button
+              and BOOM! you'll have a custom-made recipe.
+            </p>
 
+            <p>
+              <strong>Mixing and Kneading</strong>
+            </p>
+
+            <ol>
+              <li>
+                <p>
+                  First, take 2 bowls and add the amount of flour specified by
+                  the calculator to one of them.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Fill the second bowl with the amount of water the calculator
+                  tells you to use. Make sure that the water is cold
+                  enough(anywhere between 12°C and 19°C will do).
+                </p>
+              </li>
+              <li>
+                <p>
+                  Add your salt (preferably kosher salt or sea salt), stir it
+                  into the water until it's completely dissolved.
+                </p>
+              </li>
+            </ol>
+            <p>
+              Now it's time to dissolve the yeast in the water, but there's one
+              big problem: Yeast doesn't like salty water, as the salt will
+              damage the yeast. Which means your dough won't rise the way it's
+              supposed to.
+            </p>
+            <ol>
+              <li>
+                <p>
+                  So, you take some of the flour from bowl number one (about
+                  10%) and mix it into your salty water. You don't have to be
+                  super accurate, but it is a very important step because the
+                  flour will protect the yeast against the salt, allowing it to
+                  do its job properly.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Ok. When you've stirred the salt and 10% of the flour into
+                  your water, you can add your fresh yeast. If you don't have
+                  fresh yeast, you can use dry yeast, but make sure to use half
+                  of the amount recommended by the calculator. (yes, it's a tiny
+                  amount, but trust me, it works!) When the yeast is stirred
+                  into the salty, flowery water you can add the rest of the
+                  flour to it.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Now all the ingredients are in the bowl, you can loosely mix
+                  them with a spoon or with your fingertips.
+                </p>
+              </li>
+              <li>
+                <p>
+                  When everything is mixed together, you can start kneading the
+                  dough until it has an even, soft and elastic consistency. This
+                  usually takes about 8 to 20 minutes of kneading.
+                </p>
+              </li>
+            </ol>
+          </div>
+          <div class="card p-2 my-2">
+            <h3 id="fermenting">Fermenting</h3>
+            <p>
+              After the ingredients have been mixed and the dough has been
+              kneaded, it's time for proofing and rising!
+            </p>
+            <p>
+              There are two options on how to let your dough proof and rise:
+            </p>
+
+            <div class="row">
+              <div class="col col-md-6">
+                <h4 id="option-1-room-temperature-6-24-hours">
+                  Option 1: Room temperature (6-24 hours)
+                </h4>
+                <p>
+                  This will take less time than the next-level option, but it
+                  will also give you a bit less complex flavour.
+                </p>
+                <ol>
+                  <li>
+                    <p>
+                      After you knead the dough, you cover it with cling film or
+                      a damp towel and let it rest for 2 hours.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      After 2 hours have passed, you can portion the dough into
+                      balls (See the calculator to find out how large you should
+                      make your balls of dough)
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Cover the dough balls with cling film or a damp towel
+                      again and let them rise at room 18-21°C temperature for
+                      4-22 hours.
+                    </p>
+                  </li>
+                  <li>Then make the pizzas.</li>
+                </ol>
+              </div>
+              <div class="col col-md-6">
+                <h4 id="option-2-cold-fermenting">
+                  Option 2: Cold Fermenting (8-72 hours)
+                </h4>
+                <p>
+                  When you'd like to make next-level dough that's tastier,
+                  easier to digest and has a bigger rise on the crust then try
+                  this:
+                </p>
+                <ol>
+                  <li>
+                    <p>
+                      After you knead your dough you can cold-proof it, meaning
+                      that you put it straight into the fridge (4 to 7°C)
+                      covered with cling film or a damp towel. Or even better,
+                      put it in an airtight container.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Then leave it in the fridge for 8 to 72 hours. When you
+                      take it out of the fridge, you place it on a lightly
+                      flowered tabletop so you can portion the dough into balls
+                      (Check the calculator to find out how large you should
+                      make your balls of dough).
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      The last step is very important, the dough has to be at
+                      room temperature before shaping it into pizzas so make
+                      sure to wait for 2 to 4 hours.
+                    </p>
+                  </li>
+                  <li>Then make the pizzas.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <hr />
+
+          <p>Yesss! 🥳 You've made your own pizza dough 👏</p>
+
+          <hr />
+
+          <h4 id="rising-proofing">
+            What's the difference between rising and proofing?
+          </h4>
+
+          <p>
+            Hold up. Wait a minute… What has just happened? What is
+            proofing/fermenting and why does this make next-level pizzas?
+          </p>
+          <p>
+            After you first mixed the ingredients, you set 2 processes in
+            motion.
+          </p>
+          <p>
+            – In the first, the dough will start to rise because the yeast feeds
+            on the sugars in the dough and produces gases that cause the dough
+            to increase in size.
+          </p>
+          <p>
+            – The other process is called proofing or fermenting. In this
+            process, bacteria break down starches into simpler sugars.
+          </p>
+          <p>
+            The two processes start at the same time, but proofing takes a lot
+            longer because the bacteria have to break down all the starches to
+            make an airy dough that's easy to digest. That's why real good dough
+            needs at least 8 hours of rising and preferably even more time to
+            proof.
+          </p>
+          <p>
+            Proofing your dough for a long time leads to a tastier, more complex
+            flavour, more beautiful charring and a pizza that's easier to
+            digest. But you must stop the rising process by putting the dough in
+            your fridge while the proofing process continues.
+          </p>
+        </div>
+      </div>
+      <hr />
+      <p class="text-center">🔥🔥🔥 Enjoy! 🍕🍕🍕</p>
+    </div>
+  </body>
 </html>
