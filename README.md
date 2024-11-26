@@ -12,7 +12,7 @@ This project is not much more than a cheap rip-off of [Städler Made](https://ww
 ☝️ Please bear in mind that the recipes in this project are adjusted to our household and taste.
 
 Please, visit their page and take a look around before continuing here, they really deserve it!  
-All the following text/recipe/how-to content is a copy taken from: https://www.stadlermade.com/pizza-calculator/ (last copied 2022-09-23)
+All the following text/recipe/how-to content is a copy taken from: https://www.stadlermade.com/pizza-calculator/ (visited 2022-09-23)
 
 **It's the guys from Städler who deserve all the credits!**
 
