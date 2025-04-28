@@ -1,2 +1,3 @@
-nodejs 22.8.0
-clojure 1.12.0.1479
+nodejs  22
+clojure latest
+java    temurin-23.0.2+7
