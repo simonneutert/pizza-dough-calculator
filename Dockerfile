@@ -2,6 +2,8 @@ FROM node:22-bookworm-slim AS build
 
 RUN apt-get update && apt-get -q -y install \
     wget \
+    apt-utils \
+    rlwrap \
     apt-transport-https \
     gpg \
     curl
