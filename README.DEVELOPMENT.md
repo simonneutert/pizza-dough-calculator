@@ -4,7 +4,9 @@ this is a very basic [shadow-cljs](https://github.com/thheller/shadow-cljs) proj
 
 ## VS Code + Calva
 
-This is how I do it with *Node 22.8.0* and Clojure installed in VS Code:
+Please see `.tool-versions` for languages you will need to setup.
+
+This is how I do it with *Node 22.13.0* and Clojure installed in VS Code:
 
 1. from the command palette (Shift+CMD+P) `Start a REPL and Connect (aka Jack-In)`
 2. choose `shadow-cljs`
