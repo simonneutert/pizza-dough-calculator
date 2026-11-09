@@ -1,4 +1,4 @@
-FROM node:22-bookworm-slim AS build
+FROM node:24-trixie-slim AS build
 
 RUN apt-get update && apt-get -q -y install \
     wget \
@@ -6,6 +6,7 @@ RUN apt-get update && apt-get -q -y install \
     rlwrap \
     apt-transport-https \
     gpg \
+    gzip \
     curl
 
 RUN wget -qO - https://packages.adoptium.net/artifactory/api/gpg/key/public | gpg --dearmor | tee /etc/apt/trusted.gpg.d/adoptium.gpg > /dev/null
