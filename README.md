@@ -14,7 +14,7 @@ This project is not much more than a cheap rip-off of [Städler Made](https://ww
 Please, visit their page and take a look around before continuing here, they really deserve it!  
 All the following text/recipe/how-to content is a copy taken from: https://www.stadlermade.com/pizza-calculator/ (visited 2022-09-23)
 
-**It's the guys from Städler who deserve all the credits!**
+**The guys from Städler deserve all the credits for sharing their recipes!**
 
 [![Städler Made - How to make New York Pizza](https://img.youtube.com/vi/OHb0he4pqns/0.jpg)](https://www.youtube.com/watch?v=OHb0he4pqns)
 
